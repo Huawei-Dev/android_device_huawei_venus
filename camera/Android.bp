@@ -62,3 +62,13 @@ cc_library_shared {
     ],
     compile_multilib: "64",
 }
+
+cc_library_shared {
+    name: "libshim_algo_hwcam",
+    proprietary: true,
+    srcs: ["graphic-buffer.cpp"],
+    shared_libs: [
+        "libui",
+    ],
+    compile_multilib: "64",
+}
