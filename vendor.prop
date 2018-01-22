@@ -1,6 +1,7 @@
 # BT
 ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
 persist.bt.enableAptXHD=true
+ro.rfkilldisabled=1
 
 # DRM
 drm.service.enabled=true
