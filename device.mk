@@ -71,6 +71,9 @@ PRODUCT_PACKAGES += \
     libshim_memtrack \
     liblogshim
 
+PRODUCT_PACKAGES += \
+    libcamera_metadata_helper
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
