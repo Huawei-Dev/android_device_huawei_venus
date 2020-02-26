@@ -117,6 +117,9 @@ BOARD_ROOT_EXTRA_SYMLINKS += /vendor/odm/hw_odm:/hw_odm
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+# Props
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.hi6250
 

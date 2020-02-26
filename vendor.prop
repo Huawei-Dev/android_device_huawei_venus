@@ -5,6 +5,9 @@ persist.bt.enableAptXHD=true
 # DRM
 drm.service.enabled=true
 
+# Fastbootd
+ro.fastbootd.available=true
+
 # FRP
 ro.frp.pst=/dev/block/platform/hi_mci.0/by-name/frp
 
