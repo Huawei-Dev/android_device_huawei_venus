@@ -285,6 +285,8 @@ on fs
     wait /dev/block/platform/hi_mci.0/by-name   
     mount_all /vendor/etc/fstab.hi6250 --early
     
+    mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
+
     restorecon /splash2
 
     mkdir /splash2/log 0775 system log
