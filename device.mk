@@ -25,6 +25,8 @@ PRODUCT_SOONG_NAMESPACES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
+    
+PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -324,6 +326,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
    android.hardware.wifi@1.0-service \
     hostapd \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
     
