@@ -33,6 +33,9 @@ dalvik.vm.heapminfree=2m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapmaxfree=8m
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 ro.opengles.version=196610
 
