@@ -53,6 +53,7 @@ ro.config.ipv4.mtu=1400
 net.tethering.noprovisioning=true
 ro.config.hw_lte_support=true
 gsm.fastdormancy.mode=1
+ro.telephony.default_network=9,9
     
 # Sdcardfs
 persist.sys.adoptable_fbe=true
