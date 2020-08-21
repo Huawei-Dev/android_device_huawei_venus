@@ -28,6 +28,10 @@ DEVICE_PACKAGE_OVERLAYS += \
     
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
+    WifiOverlay
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -336,7 +340,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
    android.hardware.wifi@1.0-service \
     hostapd \
-    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
     
