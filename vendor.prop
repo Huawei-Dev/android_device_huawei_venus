@@ -2,6 +2,9 @@
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 ro.rfkilldisabled=1
 
+# Charger
+ro.charger.disable_init_blank=true
+
 # Dalvik
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapsize=128m
