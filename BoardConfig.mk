@@ -55,7 +55,6 @@ TARGET_NO_RADIOIMAGE := true
 MALLOC_SVELTE_FOR_LIBC32 := true
 
 # Charger 
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BACKLIGHT_PATH := /sys/class/leds/lcd_backlight0/brightness
 
 # Display
