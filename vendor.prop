@@ -11,6 +11,10 @@ dalvik.vm.heapminfree=2m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapmaxfree=8m
 
+# Display
+debug.sf.latch_unsignaled=1
+ro.opengles.version=196610
+
 # DRM
 drm.service.enabled=true
 
@@ -23,7 +27,6 @@ ro.frp.pst=/dev/block/platform/hi_mci.0/by-name/frp
 # Gralloc
 ro.config.mmu_en=1
 persist.smart_pool=1
-ro.opengles.version=196610
 
 # Kernel
 ro.config.enable_rcc=true
