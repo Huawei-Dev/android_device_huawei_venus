@@ -161,9 +161,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
     
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0
-    
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
@@ -321,6 +318,11 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
     
+# Vndk
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.base@1.0.vendor
+ 
 # Wi-Fi
 PRODUCT_PACKAGES += \
    android.hardware.wifi@1.0-service \
