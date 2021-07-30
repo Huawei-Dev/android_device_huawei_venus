@@ -198,6 +198,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.hi6250
     
+# MAC Loader
+PRODUCT_PACKAGES += \
+    mac_nvme
+    
 # Media
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service
