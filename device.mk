@@ -311,7 +311,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     device/huawei/venus/interfaces \
     vendor/hisi/opensource/fm-commonsys
-    
+
+# Speed profile services and wifi-service to reduce RAM and storage
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
