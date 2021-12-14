@@ -18,6 +18,7 @@ DEVICE_PATH := device/huawei/venus
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Architecture
 TARGET_ARCH := arm64
