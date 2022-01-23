@@ -276,7 +276,8 @@ PRODUCT_PACKAGES += \
     reference-ril \
     libprotobuf-cpp-full \
     libtinyxml \
-    libxml2
+    libxml2 \
+    mploader
     
 # Shims
 PRODUCT_PACKAGES += \
