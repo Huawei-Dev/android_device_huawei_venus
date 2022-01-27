@@ -38,7 +38,10 @@ PRODUCT_BRAND := Huawei
 PRODUCT_MANUFACTURER := HUAWEI
 PRODUCT_MODEL := Huawei-P9-Lite
 
+PRODUCT_SYSTEM_NAME := venus
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=venus \
     PRIVATE_BUILD_DESC="VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
