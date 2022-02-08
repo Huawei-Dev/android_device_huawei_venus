@@ -125,7 +125,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_PACKAGES += \
     audio.primary.hisi_wrapper \
     audio.primary.default \
-    audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
     libaudioutils \
