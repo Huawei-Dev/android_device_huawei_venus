@@ -14,50 +14,34 @@
  * limitations under the License.
  */
 
-#include <android-base/file.h>
-#include <android-base/logging.h>
-#include <android-base/strings.h>
-
 #include "GloveMode.h"
+
+#include <fstream>
 
 namespace vendor {
 namespace lineage {
 namespace touch {
 namespace V1_0 {
-namespace implementation {
+namespace hi6250 {
 
-constexpr const char kControlPath[] = "/sys/touchscreen/touch_glove";
-
-GloveMode::GloveMode() {
-    mHasGloveMode = !access(kControlPath, F_OK);
-}
+static constexpr const char *kTouchGlovePath = "/sys/touchscreen/touch_glove";
 
 // Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
 Return<bool> GloveMode::isEnabled() {
-    std::string buf;
+    std::ifstream file(kTouchGlovePath);
+    int result;
 
-    if (!mHasGloveMode) return false;
-
-    if (!android::base::ReadFileToString(kControlPath, &buf)) {
-        LOG(ERROR) << "Failed to read " << kControlPath;
-        return false;
-    }
-
-    return std::stoi(android::base::Trim(buf)) == 1;
+    file >> result;
+    return !file.fail() && result > 0;
 }
 
 Return<bool> GloveMode::setEnabled(bool enabled) {
-    if (!mHasGloveMode) return false;
-
-    if (!android::base::WriteStringToFile((enabled ? "1" : "0"), kControlPath)) {
-        LOG(ERROR) << "Failed to write " << kControlPath;
-        return false;
-    }
-
-    return true;
+    std::ofstream file(kTouchGlovePath);
+    file << (enabled ? "1" : "0");
+    return !file.fail();
 }
 
-}  // namespace implementation
+}  // namespace hi6250
 }  // namespace V1_0
 }  // namespace touch
 }  // namespace lineage

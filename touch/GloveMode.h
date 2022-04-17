@@ -18,27 +18,33 @@
 #define VENDOR_LINEAGE_TOUCH_V1_0_GLOVEMODE_H
 
 #include <vendor/lineage/touch/1.0/IGloveMode.h>
+#include <hidl/MQDescriptor.h>
+#include <hidl/Status.h>
 
 namespace vendor {
 namespace lineage {
 namespace touch {
 namespace V1_0 {
-namespace implementation {
+namespace hi6250 {
 
+using ::android::hardware::hidl_array;
+using ::android::hardware::hidl_memory;
+using ::android::hardware::hidl_string;
+using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
+using ::android::hardware::Void;
+using ::android::sp;
 
 class GloveMode : public IGloveMode {
-   public:
-    GloveMode();
+  public:
+    GloveMode() = default;
+
     // Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
     Return<bool> isEnabled() override;
     Return<bool> setEnabled(bool enabled) override;
-
-   private:
-    bool mHasGloveMode;
 };
 
-}  // namespace implementation
+}  // namespace hi6250
 }  // namespace V1_0
 }  // namespace touch
 }  // namespace lineage
