@@ -302,7 +302,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
     
-    
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.bundle1

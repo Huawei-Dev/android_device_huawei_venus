@@ -136,6 +136,7 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_hi6250
 
 # VNDK
 PRODUCT_USE_VNDK_OVERRIDE := true
+PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS += device/huawei/venus/sepolicy
