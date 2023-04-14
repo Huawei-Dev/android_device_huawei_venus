@@ -27,6 +27,9 @@ ro.fastbootd.available=true
 ro.config.mmu_en=1
 persist.smart_pool=1
 
+# Graphics
+ro.hwui.render_ahead=20
+
 # Kernel
 ro.config.enable_rcc=true
 
