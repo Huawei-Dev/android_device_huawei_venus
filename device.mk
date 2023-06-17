@@ -269,6 +269,7 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi6250 \
+    fstab.hi6250.ramdisk \
     fstab.modem \
     init.hi6250.connectivity.rc \
     init.hi6250.hisi.rc \
