@@ -151,7 +151,7 @@ PRODUCT_PACKAGES += \
     
 # Configstore
 PRODUCT_PACKAGES += \
-    disable_configstore
+    android.hardware.configstore@1.1-service
     
 # DRM
 PRODUCT_PACKAGES += \
