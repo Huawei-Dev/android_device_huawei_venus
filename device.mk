@@ -225,6 +225,10 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
     
+# Misc
+PRODUCT_PACKAGES += \
+    libxcollie
+    
 # Netutils
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
