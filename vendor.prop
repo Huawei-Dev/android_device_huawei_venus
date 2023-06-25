@@ -7,6 +7,7 @@ ro.hardware.audio.primary=hisi_wrapper
 # BT
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 ro.rfkilldisabled=1
+bluetooth.device.class_of_device=26,2,12
 
 # Charger
 ro.charger.disable_init_blank=true
