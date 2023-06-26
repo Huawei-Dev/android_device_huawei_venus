@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service.hisi \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl \
-    android.hardware.bluetooth.audio@2.0-impl
+    android.hardware.bluetooth.audio@2.1-impl
     
 # BT
 PRODUCT_PACKAGES += \
