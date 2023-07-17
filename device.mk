@@ -314,6 +314,7 @@ PRODUCT_PACKAGES += \
     
 # Shims
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.common@1.0_types.vendor \
     libshim_log
 
 # Sensors
