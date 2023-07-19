@@ -48,13 +48,13 @@
 # Rootfs
 /produce(/.*)?																u:object_r:system_file:s0
 /splash2(/.*)?         															u:object_r:splash2_data_file:s0
-/3rdmodem(/.*)?																u:object_r:modem_log_file:s0
-/3rdmodemnvm(/.*)?															u:object_r:modem_log_file:s0
-/3rdmodemnvmbkp(/.*)?                                       								u:object_r:modem_log_file:s0
+/3rdmodem(/.*)?																u:object_r:modem_file:s0
+/3rdmodemnvm(/.*)?															u:object_r:modem_file:s0
+/3rdmodemnvmbkp(/.*)?                                       								u:object_r:modem_file:s0
 /sec_storage(/.*)?     															u:object_r:teecd_data_file:s0
-/modem_log(/.*)?       														u:object_r:modem_log_file:s0
-/mnvm2:0(/.*)?																u:object_r:modem_nv_file:s0
-/modem_fw(/.*)?															u:object_r:modem_fw_file:s0
+/modem_log(/.*)?       														u:object_r:modem_file:s0
+/mnvm2:0(/.*)?																u:object_r:modem_file:s0
+/modem_fw(/.*)?															u:object_r:modem_file:s0
 /hw_odm(/.*)?          															u:object_r:rootfs:s0
 
 # NFC labeling
