@@ -191,6 +191,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.hi6250
     
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.1-service-hisi
+
 # MAC Loader
 PRODUCT_PACKAGES += \
     mac_nvme
