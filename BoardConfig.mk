@@ -198,7 +198,7 @@ BOARD_AVB_ENABLE := false
 TARGET_USES_CUSTOM_THERMAL := true
 
 # Shims
-TARGET_LD_SHIM_LIBS += /vendor/lib/libhwlog.so|libshim_log.so:/vendor/lib64/libhwlog.so|libshim_log.so
+TARGET_LD_SHIM_LIBS += /vendor/lib/libhwlog.so|liblog_vendor.so:/vendor/lib64/libhwlog.so|liblog_vendor.so
 
 TARGET_LD_SHIM_LIBS += /vendor/lib/egl/libGLES_mali.so|/system/lib/vndk-sp-29/libutilscallstack.so:/vendor/lib64/egl/libGLES_mali.so|/system/lib64/vndk-sp-29/libutilscallstack.so
 TARGET_LD_SHIM_LIBS += /vendor/lib/hw/gralloc.hi6250.so|/system/lib/vndk-sp-29/libutilscallstack.so:/vendor/lib64/hw/gralloc.hi6250.so|/system/lib64/vndk-sp-29/libutilscallstack.so
