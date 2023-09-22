@@ -1,0 +1,33 @@
+on fs
+    mount_all /vendor/etc/fstab.modem
+    chown radio radio sys/devices/platform/balong_power/state
+
+on boot
+    chown root shell /system/etc/init.d/*.*
+    chmod 0755 /system/etc/init.d/*.*
+
+on property:persist.sys.huawei.debug.on=0
+    chown system system /sys/class/sensors/sensorhub_dump
+    chmod 0660 /sys/class/sensors/sensorhub_dump
+    
+on property:persist.sys.huawei.debug.on=1
+    chown system system /sys/class/sensors/sensorhub_dump
+    chmod 0664 /sys/class/sensors/sensorhub_dump
+    chown system audio /dev/voice_proxy_vowifi
+    chmod 0660 /dev/voice_proxy_vowifi
+    write /proc/sys/net/ipv4/ip_local_reserved_ports 31000-31050 	
+	
+on property:init.svc.imonitor=running
+    chown root system /data/log/jank
+    chown root system /data/log/jank/log
+    
+on property:service.bootanim.exit=1
+    write /proc/balong/stats/boot_time 1
+    
+on property:persist.sys.fingersense=1
+    write /sys/devices/platform/huawei_sensor/set_fingersense_enable 1
+    write /sys/devices/platform/huawei_touch/roi_enable 1
+    
+on property:persist.sys.fingersense=0
+    write /sys/devices/platform/huawei_sensor/set_fingersense_enable 0
+    write /sys/devices/platform/huawei_touch/roi_enable 0
