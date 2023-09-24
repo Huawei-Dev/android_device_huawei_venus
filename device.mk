@@ -63,6 +63,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf
     
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/privapp-permissions-com.android.supl.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.android.supl.xml
+    
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
 
