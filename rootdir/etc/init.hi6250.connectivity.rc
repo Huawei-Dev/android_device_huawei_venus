@@ -11,6 +11,15 @@ on post-fs-data
     
     mkdir /data/vendor/gnss 0770 system system
     mkdir /data/vendor/cust_conn 0770 system system
+    
+on property:sys.conn_macs.ready=1
+    # Bluetooth
+    chown bluetooth bluetooth /data/vendor/bluedroid/macbt
+    chmod 0666 /data/vendor/bluedroid/macbt
+
+    # Wi-Fi
+    chown wifi wifi /data/vendor/wifi/macwlan
+    chmod 0666 /data/vendor/wifi/macwlan
 
 service octty /vendor/bin/octty
     class core
