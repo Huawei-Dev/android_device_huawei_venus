@@ -258,6 +258,7 @@ PRODUCT_COPY_FILES += \
 
 # Pcap
 PRODUCT_PACKAGES += \
+    libstdc++_vendor \
     libpcap.vendor
 
 # Ramdisk
