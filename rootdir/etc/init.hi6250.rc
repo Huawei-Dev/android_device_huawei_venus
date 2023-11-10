@@ -265,7 +265,7 @@ on init
     chmod 0660 /dev/nxp_smartpa_dev
 
     chown system system /dev/sensorhub
-    chmod 0660 /dev/sensorhub
+    chmod 0664 /dev/sensorhub
     chown system system /dev/motionhub
     chmod 0660 /dev/motionhub
     chown system system /dev/fingerprint
