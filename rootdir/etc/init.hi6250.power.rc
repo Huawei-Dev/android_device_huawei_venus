@@ -58,10 +58,9 @@ on init
     write sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 2112000
     write sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2112000
     
-    write /proc/sys/kernel/hung_task_panic 1
+    write /proc/sys/kernel/hung_task_panic 0
     write /proc/sys/kernel/hung_task_timeout_secs 90
-    write /sys/kernel/hungtask/monitorlist "whitelist,system_server,surfaceflinger,init"
-    write /sys/kernel/hungtask/enable "on"
+    write /sys/kernel/hungtask/enable "off"
     chown system system /sys/kernel/hungtask/vm_heart
 
 on enable-low-power
