@@ -152,6 +152,9 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
 # Power
 TARGET_HAS_LEGACY_POWER_STATS := true
 
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.hi6250
 
