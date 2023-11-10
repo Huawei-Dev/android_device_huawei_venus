@@ -10,8 +10,6 @@ on property:persist.sys.huawei.debug.on=0
 on property:persist.sys.huawei.debug.on=1
     chown system system /sys/class/sensors/sensorhub_dump
     chmod 0664 /sys/class/sensors/sensorhub_dump
-    chown system audio /dev/voice_proxy_vowifi
-    chmod 0660 /dev/voice_proxy_vowifi
     write /proc/sys/net/ipv4/ip_local_reserved_ports 31000-31050 	
 	
 on property:init.svc.imonitor=running
