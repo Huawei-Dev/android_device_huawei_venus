@@ -1,2 +1,4 @@
 # NFC properties
 persist.nfc.            u:object_r:nfc_prop:s0
+
+ro.fastbootd.available         u:object_r:exported_default_prop:s0
