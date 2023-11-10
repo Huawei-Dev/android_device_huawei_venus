@@ -57,7 +57,10 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/prebuilts/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf
+    
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
 
 # Permissions
 PRODUCT_COPY_FILES += \
