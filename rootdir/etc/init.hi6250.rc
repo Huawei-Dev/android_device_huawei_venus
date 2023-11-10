@@ -1,10 +1,7 @@
 import /vendor/etc/init/hw/init.hi6250.connectivity.rc
 import /vendor/etc/init/hw/init.hi6250.hisi.rc
 import /vendor/etc/init/hw/init.hi6250.power.rc
-import /vendor/etc/init/hw/init.hi6250.usb.configfs.rc
 import /vendor/etc/init/hw/init.hi6250.usb.rc
-mport /vendor/etc/init/hw/init.safailnet.rc
-import /vendor/etc/init/hw/init.services.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -349,6 +346,7 @@ on post-fs
 on post-fs-data
     setprop sys.userdata_is_ready 1
     start teecd
+    setprop init.svc.console stopped
     setprop persist.sys.kmemleak.debug 0
     
     mkdir /data/nfc 0775 nfc nfc
@@ -1085,14 +1083,6 @@ on charger
     import /vendor/etc/init/hw/init.charger.rc
 
 # Start service here
-    
-# Camera
-on property:ro.product.hwcamera=VENUS
-    import /vendor/etc/init/hw/init.camera_venus.rc
-    
-on property:ro.product.hwcamera=NEMO
-    write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
-    import /vendor/etc/init/hw/init.camera_nemo.rc
     
 service ril-daemon /vendor/bin/hw/rild
     disabled

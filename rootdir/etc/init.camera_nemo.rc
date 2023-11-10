@@ -1,4 +1,0 @@
-service HwCamCfgSvr /vendor/bin/HwCamCfgSvr hi6250 NEMO
-    class main
-    user media
-    group audio camera inet net_bt net_bt_admin net_bw_acct mediadrm system

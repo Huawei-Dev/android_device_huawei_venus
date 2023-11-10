@@ -1,6 +1,4 @@
 import /vendor/etc/init/hw/init.hi6250.usb.rc
-import /vendor/etc/init/hw/init.hi6250.usb.configfs.rc
-import /vendor/etc/init/hw/init.chip.charger.rc
 
 on early-init
     restorecon /postinstall
@@ -38,18 +36,38 @@ on init
     chmod 664 /sys/class/devfreq/ddrfreq/min_freq
 
 on charger
+    mount_all /vendor/etc/fstab.hi6250
+    start vold
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq/interactive
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 807000
+    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chown system system /sys/class/android_usb/android0/switch_request
+    chmod 0664 /sys/class/android_usb/android0/switch_request
+
     chmod 0660 /sys/class/hw_power/charger/charge_data/iin_thermal
     chown system system /sys/class/hw_power/charger/charge_data/iin_thermal
     chmod 0660 /sys/class/hw_power/charger/direct_charger/enable_charger
     chown system system /sys/class/hw_power/charger/direct_charger/enable_charger
     chmod 0660 /sys/class/hw_power/charger/direct_charger/iin_thermal
     chown system system /sys/class/hw_power/charger/direct_charger/iin_thermal
+
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor powersave
+    write /sys/kernel/set_hmp_thresholds/enable 0
+    write /sys/kernel/hmp/up_threshold 1020
+    write /sys/kernel/hmp/down_threshold 768
+    write /sys/kernel/set_hmp_thresholds/enable 1
+
+    write /sys/class/devfreq/ddrfreq/min_freq 0
+    write /sys/class/devfreq/ddrfreq/max_freq 0
+    write /sys/class/devfreq/ddrfreq_latency/min_freq 0
+    write /sys/class/devfreq/ddrfreq_latency/max_freq 0
+    write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 933000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 933000000
+    start atcmdserver
     class_start charger
     
-service ueventd /sbin/hw_ueventd
-    critical
-    seclabel u:r:ueventd:s0
-
 service charger /sbin/hw_charger -p
     class charger
     critical

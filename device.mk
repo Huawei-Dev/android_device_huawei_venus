@@ -262,20 +262,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.hi6250 \
     fstab.modem \
-    init.camera_nemo.rc \
-    init.camera_venus.rc \
     init.charger.rc \
-    init.chip.charger.rc \
-    init.chip.usb.rc \
     init.hi6250.connectivity.rc \
     init.hi6250.hisi.rc \
     init.hi6250.power.rc \
     init.hi6250.rc \
-    init.hi6250.usb.configfs.rc \
     init.hi6250.usb.rc \
     init.recovery.hi6250.rc \
-    init.safailnet.rc \
-    init.services.rc \
     ueventd.hi6250.rc
 
 PRODUCT_COPY_FILES += \
