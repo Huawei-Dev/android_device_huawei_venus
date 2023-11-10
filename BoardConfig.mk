@@ -197,23 +197,5 @@ BOARD_AVB_ENABLE := false
 # Thermal
 TARGET_USES_CUSTOM_THERMAL := true
 
-# Shims
-TARGET_LD_SHIM_LIBS += /vendor/lib/libhwlog.so|liblog_vendor.so:/vendor/lib64/libhwlog.so|liblog_vendor.so
-
-TARGET_LD_SHIM_LIBS += /vendor/lib/egl/libGLES_mali.so|/system/lib/vndk-sp-29/libutilscallstack.so:/vendor/lib64/egl/libGLES_mali.so|/system/lib64/vndk-sp-29/libutilscallstack.so
-TARGET_LD_SHIM_LIBS += /vendor/lib/hw/gralloc.hi6250.so|/system/lib/vndk-sp-29/libutilscallstack.so:/vendor/lib64/hw/gralloc.hi6250.so|/system/lib64/vndk-sp-29/libutilscallstack.so
-TARGET_LD_SHIM_LIBS += /vendor/lib/hw/vulkan.hi6250.so|/system/lib/vndk-sp-29/libutilscallstack.so:/vendor/lib64/hw/vulkan.hi6250.so|/system/lib64/vndk-sp-29/libutilscallstack.so
-
-TARGET_LD_SHIM_LIBS += /vendor/lib/libshim_hivwservice.so|/system/lib/vndk-sp-29/libprocessgroup.so
-
-TARGET_LD_SHIM_LIBS += /vendor/lib64/libxcollie.so|/system/lib64/vndk-sp-29/libbase.so
-
-TARGET_LD_SHIM_LIBS += /vendor/lib/hw/audio.primary.hi6250.so|/system/lib/vndk-29/libshim_icu.so
-TARGET_LD_SHIM_LIBS += /vendor/lib/hw/audio.primary.hi6250.so|libshim_audioroute.so
-TARGET_LD_SHIM_LIBS += /vendor/lib/hw/audio.primary.hi6250.so|libshim_hivwservice.so
-
-# Pie + Ten
-TARGET_LD_SHIM_LIBS += /vendor/lib64/vendor.huawei.hardware.radio@1.0.so|libshim_android.hardware.radio@1.0.so
-
 # inherit from the proprietary version
 -include vendor/huawei/venus/BoardConfigVendor.mk
