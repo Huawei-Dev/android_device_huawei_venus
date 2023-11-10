@@ -1133,6 +1133,7 @@ on property:ro.multi.rild=false
 # Not used in getprop !!!    
 service atcmdserver /vendor/bin/atcmdserver
     class main
+    group root system nfc graphics audio camera
     disabled
        
 service diagserver /vendor/bin/diagserver
@@ -1143,7 +1144,7 @@ service diagserver /vendor/bin/diagserver
 service teecd /vendor/bin/teecd
     class core
     user root
-    group root readproc
+    group root system readproc
     
 service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     class core
@@ -1156,6 +1157,26 @@ service otg_daemon /system/bin/otg_daemon
     class core
     user root
     group system root readproc
+    
+service irqbalance /vendor/bin/irqbalance
+    user root
+    group system
+    disabled
+    oneshot
+    
+service iked /vendor/bin/iked
+    class late_start
+    user root
+    disabled
+    group system
+    
+service thermal-daemon /vendor/bin/thermal-daemon
+    class main
+    user system
+    group system
+	
+on property:ro.config.hw_vowifi=true
+    start iked
     
 # Oreo
 on property:ro.boot.ddrsize=2
