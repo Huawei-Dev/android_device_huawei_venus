@@ -276,8 +276,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.hi6250 \
     fstab.modem \
-    fstab.zram1280m \
-    fstab.zram1536m \
     init.camera_nemo.rc \
     init.camera_venus.rc \
     init.charger.rc \
@@ -294,7 +292,7 @@ PRODUCT_PACKAGES += \
     ueventd.hi6250.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.hi6250
+    $(LOCAL_PATH)/rootdir/fstab.hi6250:$(TARGET_COPY_OUT_RAMDISK)/fstab.hi6250
     
 # RenderScript HAL
 PRODUCT_PACKAGES += \

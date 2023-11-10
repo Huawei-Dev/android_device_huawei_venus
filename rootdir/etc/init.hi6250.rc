@@ -17,7 +17,6 @@ on early-init
     write /proc/sys/vm/swappiness 100
     
 on init
-    wait /dev/block/platform/hi_mci.0
     symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
     
     write /sys/module/hisi_nve/parameters/nve /dev/block/bootdevice/by-name/nvme
@@ -1118,7 +1117,6 @@ service ril-daemon1 /vendor/bin/hw/rild -c 1
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 on property:sys.userdata_is_ready=1
-    write /sys/devices/platform/his_modem/modem_sysboot_start 1
     start ril-daemon
 
 on property:rild.rild1_ready_to_start=true
@@ -1160,19 +1158,10 @@ service otg_daemon /system/bin/otg_daemon
     
 # Oreo
 on property:ro.boot.ddrsize=2
-    setprop persist.traced.enable 1
-    setprop ro.lmk.critical_upgrade true
-    setprop ro.lmk.upgrade_pressure 40
-    setprop ro.lmk.downgrade_pressure 60
-    setprop ro.lmk.kill_heaviest_task false
-    setprop ro.statsd.enable true
-    setprop pm.dexopt.shared quicken
-    setprop pm.dexopt.downgrade_after_inactive_days 10
-    swapon_all /vendor/etc/fstab.zram1280m
     setprop ro.config.low_ram true
     
-on property:ro.boot.ddrsize=3
-    swapon_all /vendor/etc/fstab.zram1536m
+on property:sys.boot_completed=1
+    swapon_all /vendor/etc/fstab.hi6250
     
 service audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     override

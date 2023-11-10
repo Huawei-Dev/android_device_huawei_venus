@@ -1,4 +1,4 @@
-# Contexts hi3650
+# Contexts hi6250
 
 /vendor/bin/hw/android.hardware.audio.@2.0-service				u:object_r:hal_audio_default_exec:s0
 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service		u:object_r:hal_fingerprint_default_exec:s0
@@ -42,7 +42,6 @@
 
 # Oreo
 /vendor/bin/irqbalance								u:object_r:irqbalance_exec:s0
-#/vendor/bin/CameraDaemon							u:object_r:hwcamcfgsvr_exec:s0
 
 /dev/block/bootdevice/by-name/misc						u:object_r:misc_dev_block:s0
 /dev/block/bootdevice/by-name/modem_om					u:object_r:mke2fs_blkdev:s0
@@ -55,8 +54,6 @@
 /dev/dsm									u:object_r:dmd_device:s0
 
 # Rootfs
-/cust(/.*)?            							u:object_r:system_file:s0
-/version(/.*)?         							u:object_r:system_file:s0
 /produce(/.*)?									u:object_r:system_file:s0
 /splash2(/.*)?         							u:object_r:splash2_file:s0
 /3rdmodem(/.*)?								u:object_r:modem_log_file:s0

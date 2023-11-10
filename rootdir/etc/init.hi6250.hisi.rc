@@ -1,10 +1,7 @@
 on fs
-    mount_all /vendor/etc/fstab.modem
+    mount_all /vendor/etc/fstab.modem --early
+    write /sys/devices/platform/his_modem/modem_sysboot_start 1
     chown radio radio sys/devices/platform/balong_power/state
-
-on boot
-    chown root shell /system/etc/init.d/*.*
-    chmod 0755 /system/etc/init.d/*.*
 
 on property:persist.sys.huawei.debug.on=0
     chown system system /sys/class/sensors/sensorhub_dump

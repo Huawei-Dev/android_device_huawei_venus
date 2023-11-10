@@ -132,8 +132,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USES_MKE2FS := true
 
 BOARD_ROOT_EXTRA_FOLDERS :=  \
-	cust \
-	version \
 	produce \
 	3rdmodem \
 	3rdmodemnvm \
@@ -144,9 +142,7 @@ BOARD_ROOT_EXTRA_FOLDERS :=  \
 	modem_fw \
 	splash2
     
-BOARD_ROOT_EXTRA_SYMLINKS += \
-	/vendor/odm:/odm \
-	/vendor/odm/hw_odm:/hw_odm
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/odm/hw_odm:/hw_odm
 	
 # Power
 TARGET_HAS_LEGACY_POWER_STATS := true
