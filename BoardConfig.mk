@@ -215,7 +215,5 @@ TARGET_LD_SHIM_LIBS += /vendor/lib/hw/audio.primary.hi6250.so|libshim_hivwservic
 # Pie + Ten
 TARGET_LD_SHIM_LIBS += /vendor/lib64/vendor.huawei.hardware.radio@1.0.so|libshim_android.hardware.radio@1.0.so
 
-TARGET_LD_SHIM_LIBS += /vendor/lib64/hw/fingerprint.hw.ex.so|libshim_fps.so
-
 # inherit from the proprietary version
 -include vendor/huawei/vns/BoardConfigVendor.mk
