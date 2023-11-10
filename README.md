@@ -1,1 +1,1 @@
-# android_device_huawei_vns
+# android_device_huawei_venus

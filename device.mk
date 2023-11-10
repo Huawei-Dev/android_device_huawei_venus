@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/huawei/vns
+LOCAL_PATH := device/huawei/venus
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    device/huawei/vns \
+    device/huawei/venus \
     vendor/nxp/opensource/pn5xx
 
 # Overlay
@@ -372,4 +372,4 @@ PRODUCT_COPY_FILES += \
     
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
-$(call inherit-product, vendor/huawei/vns/vns-vendor.mk)
+$(call inherit-product, vendor/huawei/venus/venus-vendor.mk)

@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-COMMON_LUNCH_CHOICES := lineage_vns-userdebug
+COMMON_LUNCH_CHOICES := lineage_venus-userdebug
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/lineage_vns.mk
+	$(LOCAL_DIR)/lineage_venus.mk

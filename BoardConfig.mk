@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/huawei/vns
+DEVICE_PATH := device/huawei/venus
 
 # Architecture
 TARGET_ARCH := arm64
@@ -38,7 +38,7 @@ TARGET_BOARD_PLATFORM := hi6250
 BOARD_VENDOR_PLATFORM := hi6250
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hi6250,vns
+TARGET_OTA_ASSERT_DEVICE := hi6250,venus
 
 # Android Q
 BUILD_BROKEN_DUP_RULES := true
@@ -101,7 +101,7 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 -
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_IMAGE_NAME := Image.gz
-TARGET_KERNEL_SOURCE := kernel/huawei/vns
+TARGET_KERNEL_SOURCE := kernel/huawei/venus
 TARGET_KERNEL_CONFIG := hisi_6250_defconfig
 TARGET_KERNEL_VERSION := 4.4
 
@@ -175,7 +175,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_hi6250
 TARGET_RECOVERY_DEVICE_MODULES := libinit_hi6250
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/huawei/vns/sepolicy
+BOARD_SEPOLICY_DIRS += device/huawei/venus/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Wifi
@@ -216,4 +216,4 @@ TARGET_LD_SHIM_LIBS += /vendor/lib/hw/audio.primary.hi6250.so|libshim_hivwservic
 TARGET_LD_SHIM_LIBS += /vendor/lib64/vendor.huawei.hardware.radio@1.0.so|libshim_android.hardware.radio@1.0.so
 
 # inherit from the proprietary version
--include vendor/huawei/vns/BoardConfigVendor.mk
+-include vendor/huawei/venus/BoardConfigVendor.mk
