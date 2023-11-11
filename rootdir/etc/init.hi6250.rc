@@ -1172,7 +1172,12 @@ on property:ro.config.hw_vowifi=true
 # Oreo
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true
-    
+
+on property:ro.config.enable_rcc=true
+    write /sys/kernel/rcc/event PASSIVE_MODE
+    write /sys/kernel/rcc/max_anon_clean_size 448M
+    write /sys/kernel/rcc/enable 1
+
 on property:sys.boot_completed=1
     swapon_all /vendor/etc/fstab.hi6250
     
