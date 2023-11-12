@@ -196,11 +196,7 @@ PRODUCT_PACKAGES += \
     
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-service
-    
-PRODUCT_PACKAGES += \
-    com.android.media.swcodec \
-    libsfplugin_ccodec \
+    android.hardware.media.omx@1.0-service \
     libmockcasplugin
     
 PRODUCT_COPY_FILES += \
@@ -216,13 +212,6 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     libxcollie
-    
-# Netutils
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
-    libandroid_net \
-    libnl \
-    netutils-wrapper-1.0
     
 # NFC
 PRODUCT_PACKAGES += \
@@ -279,14 +268,9 @@ PRODUCT_COPY_FILES += \
     
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.1 \
-    android.hardware.radio@1.1 \
     android.hardware.radio.deprecated@1.0 \
+    android.hardware.radio@1.0 \
     librilutils \
-    reference-ril \
-    libprotobuf-cpp-full \
-    libtinyxml \
-    libxml2 \
     mploader
     
 # Shims

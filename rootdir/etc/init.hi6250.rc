@@ -1143,12 +1143,6 @@ service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     critical
     ioprio rt 4
     
-# OTG
-service otg_daemon /system/bin/otg_daemon
-    class core
-    user root
-    group system root readproc
-    
 service irqbalance /vendor/bin/irqbalance
     user root
     group system
