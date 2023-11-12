@@ -2,30 +2,13 @@
 
 /vendor/bin/hw/android.hardware.audio.service								u:object_r:hal_audio_default_exec:s0
 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service			u:object_r:hal_fingerprint_default_exec:s0
-/vendor/bin/hw/android.hardware.bluetooth@1.0-service						u:object_r:hal_bluetooth_default_exec:s0
-/vendor/bin/hw/android.hardware.cas@1.2-service								u:object_r:hal_cas_default_exec:s0
-/vendor/bin/hw/android.hardware.drm@1.0-service								u:object_r:hal_drm_default_exec:s0
 /vendor/bin/hw/android.hardware.drm@1.2-service.widevine					u:object_r:hal_drm_default_exec:s0
-/vendor/bin/hw/android.hardware.drm@1.3-service.clearkey						u:object_r:hal_drm_default_exec:s0
 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.software				u:object_r:hal_gatekeeper_default_exec:s0
-/vendor/bin/hw/android.hardware.graphics.allocator@2.0-service				u:object_r:hal_graphics_default_exec:s0
-/vendor/bin/hw/android.hardware.graphics.composer@2.1-service				u:object_r:hal_graphics_default_exec:s0
-/vendor/bin/hw/android.hardware.health@2.1-service							u:object_r:hal_health_default_exec:s0
-/vendor/bin/hw/android.hardware.keymaster@3.0-service						u:object_r:hal_keymaster_default_exec:s0
 /vendor/bin/hw/android.hardware.light@2.0-service							u:object_r:hal_light_default_exec:s0
-/vendor/bin/hw/android.hardware.media.omx@1.0-service						u:object_r:hal_media_default_exec:s0
-/vendor/bin/hw/android.hardware.memtrack@1.0-service						u:object_r:hal_memtrack_default_exec:s0
 /vendor/bin/hw/android.hardware.nfc@1.2-service      							u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/android.hardware.power.stats@1.0-service.mock					u:object_r:hal_power_default_exec:s0
-/vendor/bin/hw/android.hardware.sensors@1.0-service							u:object_r:hal_sensors_default_exec:s0
-/vendor/bin/hw/android.hardware.thermal@1.0-service							u:object_r:hal_thermal_default_exec:s0
-/vendor/bin/hw/android.hardware.usb@1.0-service.basic							u:object_r:hal_usb_default_exec:s0
-/vendor/bin/hw/android.hardware.vibrator@1.0-service							u:object_r:hal_vibrator_default_exec:s0
-/vendor/bin/hw/android.hardware.wifi@1.0-service								u:object_r:hal_wifi_default_exec:s0
-/vendor/bin/hw/hostapd														u:object_r:hal_wifi_default_exec:s0
 /vendor/bin/hw/mac_nvme													u:object_r:hwmac_exec:s0
 /vendor/bin/hw/mploader													u:object_r:hwmac_exec:s0
-/vendor/bin/hw/rild															u:object_r:hal_rild_default_exec:s0
+
 /vendor/bin/hw/vendor.huawei.hardware.gnss@1.0-service						u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.graphics.displayeffect@1.0-service		u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-service		u:object_r:hal_media_default_exec:s0
@@ -36,7 +19,6 @@
 /vendor/bin/hw/vendor.huawei.hardware.perfgenius@1.0-service					u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/vendor.lineage.touch@1.0-service.hi6250						u:object_r:hal_lineage_touch_default_exec:s0
 /vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service      						u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/wpa_supplicant												u:object_r:hal_wifi_default_exec:s0
 
 /vendor/bin/atcmdserver														u:object_r:atcmdserver_exec:s0
 /vendor/bin/diagserver														u:object_r:diagserver_exec:s0
