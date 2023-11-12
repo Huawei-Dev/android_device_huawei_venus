@@ -1,5 +1,5 @@
 # BT
-ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
+ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 persist.bt.enableAptXHD=true
 ro.rfkilldisabled=1
 
