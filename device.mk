@@ -310,6 +310,7 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor
     
 PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite-v29 \
     libui-v28
  
 # Wi-Fi
