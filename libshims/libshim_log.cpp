@@ -60,9 +60,9 @@ extern "C" int __android_logPower_print(int bufID, int priority, char* tag, char
 extern "C" int __android_log_print(int prio, const char *tag, const char *fmt, ...)
 {
     va_list ap;
-    char buf[LOG_BUF_SIZE];    
+    char buf[512];    
     va_start(ap, fmt);
-    vsnprintf(buf, LOG_BUF_SIZE, fmt, ap);
+    vsnprintf(buf, sizeof(buf), fmt, ap);
     va_end(ap);
     return __android_log_write(prio, tag, buf);
 }
