@@ -114,8 +114,7 @@ BOARD_ROOT_EXTRA_FOLDERS :=  \
 	modem_log \
 	mnvm2:0 \
 	modem_fw \
-	splash2 \
-	oeminfo
+	splash2
     
 BOARD_ROOT_EXTRA_SYMLINKS += /vendor/odm/hw_odm:/hw_odm
 	

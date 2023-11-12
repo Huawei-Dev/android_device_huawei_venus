@@ -271,13 +271,10 @@ on init
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
 
-on early-fs
-    # Oeminfo
+on fs    
     wait /dev/block/bootdevice/by-name/oeminfo
     start oeminfo_nvm
 
-on fs    
-    wait /dev/block/platform/hi_mci.0/by-name   
     mount_all /vendor/etc/fstab.hi6250 --early
     
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
@@ -1142,12 +1139,6 @@ service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     group system readproc root
     critical
     ioprio rt 4
-    
-service irqbalance /vendor/bin/irqbalance
-    user root
-    group system
-    disabled
-    oneshot
     
 service iked /vendor/bin/iked
     class late_start
