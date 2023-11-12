@@ -1,9 +1,10 @@
-on fs
-    wait /data/misc/bluedroid
-    wait /data/misc/wifi
-    start mac_nvme
+on post-fs-data
+    wait /data/vendor/bluedroid
+    wait /data/vendor/wifi
+    start  mac_nvme
 
 service mac_nvme /vendor/bin/hw/mac_nvme
+    class main
     user root
     group bluetooth system wifi
     oneshot
