@@ -24,11 +24,6 @@ on init
     chown radio system /dev/flp
     chmod 0660 /dev/flp
     
-    chown radio system /dev/flp
-    chmod 0660 /dev/flp
-    
-    mkdir /patch_hw 0775 system system
-    
     chmod 0400 /dev/hisi_teelog
     
     mkdir /dev/bus 0755 root root
@@ -56,14 +51,18 @@ on init
     chmod 664 /sys/class/devfreq/gpufreq/min_freq
     chown system system /sys/class/devfreq/gpufreq/cur_freq
     chmod 664 /sys/class/devfreq/gpufreq/cur_freq
+    chown system system /sys/class/devfreq/gpufreq/polling_interval
+    chmod 664 /sys/class/devfreq/gpufreq/polling_interval
     chown system system /sys/class/devfreq/gpufreq/available_frequencies
     chmod 664 /sys/class/devfreq/gpufreq/available_frequencies
     chown system system /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost
     chmod 664 /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost
     chown system system /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost_freq
     chmod 664 /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost_freq
-    chown system system /sys/class/devfreq/gpufreq/polling_interval
-    chmod 664 /sys/class/devfreq/gpufreq/polling_interval
+    chown system system /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost
+    chmod 664 /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost
+    chown system system /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost_freq
+    chmod 664 /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost_freq
 
     chown system system /sys/class/devfreq/ddrfreq/max_freq
     chmod 664 /sys/class/devfreq/ddrfreq/max_freq
@@ -148,6 +147,7 @@ on init
     chmod 0660 /sys/kernel/mntn/switch/tasklet
     chmod 0660 /sys/kernel/mntn/switch/worker
 
+    mount cgroup none /dev/cpuctl cpu
     chown system system /dev/cpuctl
     chmod 0660 /dev/cpuctl
     chown system system /dev/cpuctl/tasks
@@ -162,6 +162,36 @@ on init
     write /dev/cpuctl/bg_non_interactive/cpu.shares 52
     write /dev/cpuctl/bg_non_interactive/cpu.rt_runtime_us 700000
     write /dev/cpuctl/bg_non_interactive/cpu.rt_period_us 1000000
+    
+    mount cgroup none /dev/blkio blkio
+    mkdir /dev/blkio/foreground
+    mkdir /dev/blkio/background
+    mkdir /dev/blkio/system-background
+    mkdir /dev/blkio/key-background
+    mkdir /dev/blkio/top-app
+
+    chown system system /dev/blkio
+    chown system system /dev/blkio/foreground
+    chown system system /dev/blkio/background
+    chown system system /dev/blkio/system-background
+    chown system system /dev/blkio/key-background
+    chown system system /dev/blkio/top-app
+
+    chown system system /dev/blkio/tasks
+    chown system system /dev/blkio/foreground/tasks
+    chown system system /dev/blkio/background/tasks
+    chown system system /dev/blkio/system-background/tasks
+    chown system system /dev/blkio/key-background/tasks
+    chown system system /dev/blkio/top-app/tasks
+
+    chmod 0644 /dev/blkio/tasks
+    chmod 0644 /dev/blkio/foreground/tasks
+    chmod 0644 /dev/blkio/background/tasks
+    chmod 0644 /dev/blkio/system-background/tasks
+    chmod 0644 /dev/blkio/key-background/tasks
+    chmod 0644 /dev/blkio/top-app/tasks
+    
+    mount cgroup none /dev/cpuset cpuset,cpuset_noprefix
 
     mkdir /dev/cpuset/foreground
     write /dev/cpuset/foreground/cpus 0-7
@@ -202,6 +232,22 @@ on init
     chmod 0664 /dev/cpuset/system-background/tasks
     chmod 0664 /dev/cpuset/top-app/tasks
     chmod 0664 /dev/cpuset/tasks
+    
+    mkdir /dev/cpuset/vip
+    write /dev/cpuset/vip/cpus 0-7
+    write /dev/cpuset/vip/mems 0
+    chown system system /dev/cpuset/vip
+    chown system system /dev/cpuset/vip/tasks
+    chmod 0664 /dev/cpuset/vip/tasks
+
+    mkdir /dev/stune/vip
+    chown system system /dev/stune/vip
+    chown system system /dev/stune/vip/tasks
+    chmod 0664 /dev/stune/vip/tasks
+    chown system system /dev/stune/vip/schedtune.boost
+    chmod 0664 /dev/stune/vip/schedtune.boost
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/vip/schedtune.prefer_idle 1
 
     chmod  0660  /dev/madapt
     chown  radio  radio  /dev/madapt
@@ -272,6 +318,9 @@ on fs
     mount_all /vendor/etc/fstab.hi6250 --early
     
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
+    
+    restorecon       /sys/class/graphics/fb0/lcd_cabc_mode
+    restorecon       /sys/class/leds/torch/flash_thermal_protect
 
 on late-fs
     mount_all /vendor/etc/fstab.hi6250 --late
