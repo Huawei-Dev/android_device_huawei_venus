@@ -3,6 +3,14 @@ ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 persist.bt.enableAptXHD=true
 ro.rfkilldisabled=1
 
+# Dalvik
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapsize=128m
+dalvik.vm.heapgrowthlimit=64m
+dalvik.vm.heapminfree=2m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapmaxfree=8m
+
 # DRM
 drm.service.enabled=true
 
@@ -19,10 +27,6 @@ ro.opengles.version=196610
 
 # Kernel
 ro.config.enable_rcc=true
-
-# local
-net.tethering.noprovisioning=true
-ro.config.hw_lte_support=true
 
 # Launcher
 lockscreen.rot_override=true
@@ -51,6 +55,8 @@ ro.config.hw_board_ipa=true
 
 # RIL
 ro.config.ipv4.mtu=1400
+net.tethering.noprovisioning=true
+ro.config.hw_lte_support=true
     
 # Sdcardfs
 ro.statsd.enable=false
@@ -60,7 +66,10 @@ persist.sys.adoptable_fbe=true
 # Sensors
 ro.config.hw_sensorhub=true
 
-# wifi
+# Touch
+persist.sys.fingersense=1
+
+# WiFi
 wifi.interface=wlan0
 wifi.direct.interface=p2p-dev-wlan0
 
