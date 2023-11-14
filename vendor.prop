@@ -59,7 +59,7 @@ debug.stagefright.ccodec=0
 
 # Misc
 persist.sys.huawei.debug.on=1
-ro.vendor.config.hw_vowifi=true
+ro.config.hw_vowifi=true
 
 # Netflix
 ro.netflix.bsp_rev=Q660-13149-1
