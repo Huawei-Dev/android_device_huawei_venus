@@ -1143,15 +1143,15 @@ service iked /vendor/bin/iked
     disabled
     group system
     
-service thermal-daemon /vendor/bin/thermal-daemon
-    class main
+service hivwserver /vendor/bin/hivwserver
+    class vowifi
     user system
-    group system
+    group audio inet net_bt net_bt_admin net_bw_acct system
 	
 on property:ro.config.hw_vowifi=true
+    class_start vowifi
     start iked
     
-# Oreo
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true
 
