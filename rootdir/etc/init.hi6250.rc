@@ -147,52 +147,6 @@ on init
     chmod 0660 /sys/kernel/mntn/switch/tasklet
     chmod 0660 /sys/kernel/mntn/switch/worker
 
-    mount cgroup none /dev/cpuctl cpu
-    chown system system /dev/cpuctl
-    chmod 0660 /dev/cpuctl
-    chown system system /dev/cpuctl/tasks
-    chmod 0666 /dev/cpuctl/tasks
-    write /dev/cpuctl/cpu.shares 1024
-    write /dev/cpuctl/cpu.rt_runtime_us 800000
-    write /dev/cpuctl/cpu.rt_period_us 1000000
-
-    mkdir /dev/cpuctl/bg_non_interactive
-    chown system system /dev/cpuctl/bg_non_interactive/tasks
-    chmod 0666 /dev/cpuctl/bg_non_interactive/tasks
-    write /dev/cpuctl/bg_non_interactive/cpu.shares 52
-    write /dev/cpuctl/bg_non_interactive/cpu.rt_runtime_us 700000
-    write /dev/cpuctl/bg_non_interactive/cpu.rt_period_us 1000000
-    
-    mount cgroup none /dev/blkio blkio
-    mkdir /dev/blkio/foreground
-    mkdir /dev/blkio/background
-    mkdir /dev/blkio/system-background
-    mkdir /dev/blkio/key-background
-    mkdir /dev/blkio/top-app
-
-    chown system system /dev/blkio
-    chown system system /dev/blkio/foreground
-    chown system system /dev/blkio/background
-    chown system system /dev/blkio/system-background
-    chown system system /dev/blkio/key-background
-    chown system system /dev/blkio/top-app
-
-    chown system system /dev/blkio/tasks
-    chown system system /dev/blkio/foreground/tasks
-    chown system system /dev/blkio/background/tasks
-    chown system system /dev/blkio/system-background/tasks
-    chown system system /dev/blkio/key-background/tasks
-    chown system system /dev/blkio/top-app/tasks
-
-    chmod 0644 /dev/blkio/tasks
-    chmod 0644 /dev/blkio/foreground/tasks
-    chmod 0644 /dev/blkio/background/tasks
-    chmod 0644 /dev/blkio/system-background/tasks
-    chmod 0644 /dev/blkio/key-background/tasks
-    chmod 0644 /dev/blkio/top-app/tasks
-    
-    mount cgroup none /dev/cpuset cpuset,cpuset_noprefix
-
     mkdir /dev/cpuset/foreground
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/mems 0
