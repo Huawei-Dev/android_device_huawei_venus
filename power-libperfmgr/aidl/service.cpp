@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.power-service.pixel-libperfmgr"
+#define LOG_TAG "android.hardware.power-service.hisi-libperfmgr"
 
 #include <thread>
 
@@ -39,7 +39,7 @@ int main() {
     const std::string config_path =
             "/vendor/etc/" +
             android::base::GetProperty(kConfigProperty.data(), kConfigDefaultFileName.data());
-    LOG(INFO) << "Pixel Power HAL AIDL Service with Extension is starting with config: "
+    LOG(INFO) << "Hisi Power HAL AIDL Service with Extension is starting with config: "
               << config_path;
 
     // Parse config but do not start the looper
@@ -66,7 +66,7 @@ int main() {
     const std::string instance = std::string() + Power::descriptor + "/default";
     binder_status_t status = AServiceManager_addService(pw->asBinder().get(), instance.c_str());
     CHECK(status == STATUS_OK);
-    LOG(INFO) << "Pixel Power HAL AIDL Service with Extension is started.";
+    LOG(INFO) << "Hisi Power HAL AIDL Service with Extension is started.";
 
     std::thread initThread([&]() {
         ::android::base::WaitForProperty(kPowerHalInitProp.data(), "1");
@@ -78,6 +78,6 @@ int main() {
     ABinderProcess_joinThreadPool();
 
     // should not reach
-    LOG(ERROR) << "Pixel Power HAL AIDL Service with Extension just died.";
+    LOG(ERROR) << "Hisi Power HAL AIDL Service with Extension just died.";
     return EXIT_FAILURE;
 }
