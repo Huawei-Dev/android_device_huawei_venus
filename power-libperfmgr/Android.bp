@@ -13,21 +13,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_library {
-    name: "libdisppower-hisi",
-    proprietary: true,
-    srcs: [
-        "disp-power/InteractionHandler.cpp",
-    ],
-     shared_libs: [
-        "libbase",
-        "libcutils",
-        "liblog",
-        "libperfmgr",
-        "libutils",
-    ],
-}
-
 cc_binary {
     name: "android.hardware.power-service.hisi-libperfmgr",
     relative_install_path: "hw",
@@ -41,7 +26,6 @@ cc_binary {
         "liblog",
         "libutils",
         "libbinder_ndk",
-        "libdisppower-hisi",
         "libperfmgr",
         "pixel-power-ext-ndk_platform",
     ],
@@ -49,5 +33,6 @@ cc_binary {
         "aidl/service.cpp",
         "aidl/Power.cpp",
         "aidl/PowerExt.cpp",
+        "aidl/InteractionHandler.cpp",
     ],
 }
