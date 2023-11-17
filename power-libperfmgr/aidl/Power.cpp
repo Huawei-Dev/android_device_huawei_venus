@@ -30,8 +30,6 @@
 #include <utils/Log.h>
 #include <utils/Trace.h>
 
-#include "disp-power/DisplayLowPower.h"
-
 namespace aidl {
 namespace google {
 namespace hardware {
@@ -43,9 +41,8 @@ constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
 constexpr char kPowerHalAudioProp[] = "vendor.powerhal.audio";
 constexpr char kPowerHalRenderingProp[] = "vendor.powerhal.rendering";
 
-Power::Power(std::shared_ptr<HintManager> hm, std::shared_ptr<DisplayLowPower> dlpw)
+Power::Power(std::shared_ptr<HintManager> hm)
     : mHintManager(hm),
-      mDisplayLowPower(dlpw),
       mInteractionHandler(nullptr),
       mSustainedPerfModeOn(false) {
     mInteractionHandler = std::make_unique<InteractionHandler>(mHintManager);
@@ -80,14 +77,6 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(DEBUG) << "Power setMode: " << toString(type) << " to: " << enabled;
     ATRACE_INT(toString(type).c_str(), enabled);
     switch (type) {
-        case Mode::LOW_POWER:
-            mDisplayLowPower->SetDisplayLowPower(enabled);
-            if (enabled) {
-                mHintManager->DoHint(toString(type));
-            } else {
-                mHintManager->EndHint(toString(type));
-            }
-            break;
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
                      mHintManager->DoHint("SUSTAINED_PERFORMANCE");
@@ -127,10 +116,6 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
 
 ndk::ScopedAStatus Power::isModeSupported(Mode type, bool *_aidl_return) {
     bool supported = mHintManager->IsHintSupported(toString(type));
-    // LOW_POWER handled insides PowerHAL specifically
-    if (type == Mode::LOW_POWER) {
-        supported = true;
-    }
     LOG(INFO) << "Power mode " << toString(type) << " isModeSupported: " << supported;
     *_aidl_return = supported;
     return ndk::ScopedAStatus::ok();
