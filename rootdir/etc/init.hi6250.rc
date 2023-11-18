@@ -1052,11 +1052,11 @@ service ril-daemon1 /vendor/bin/hw/rild -c 1
     socket rilds2 stream 660 root radio
     socket rild-debug1 stream 660 radio system
     socket rild-balong-test stream 660 radio system
-    user radio
-    group radio cache inet misc audio log readproc wakelock net_raw
+    user root
+    group radio cache inet misc audio sdcard_r sdcard_rw log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-on property:sys.rilprops_ready=1
+on property:sys.userdata_is_ready=1
     start ril-daemon
 
 on property:rild.rild1_ready_to_start=true
