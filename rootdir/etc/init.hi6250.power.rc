@@ -149,7 +149,10 @@ on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 
 on property:sys.boot_completed=1
+    #GPU
     write /sys/class/devfreq/gpufreq/mali_ondemand/no_vsync_upthreshold 60
+    write /sys/class/devfreq/gpufreq/gpu_scene_aware/scene_para 0:85:360000000:100:20,80:360000000:90:680000000:80
+    # CPU
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1306000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 75:807000:85:1306000:80
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 85
