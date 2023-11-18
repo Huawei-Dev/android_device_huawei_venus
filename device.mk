@@ -254,10 +254,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service.hisi-libperfmgr
     
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/perfgenius_boost_policy.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perfgenius_boost_policy.xml \
-    $(LOCAL_PATH)/prebuilts/perfgenius_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perfgenius_config.xml
-    
 # Pcap
 PRODUCT_PACKAGES += \
     libpcap.vendor

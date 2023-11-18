@@ -68,10 +68,8 @@ ro.netflix.bsp_rev=Q660-13149-1
 ro.hardware.nfc_nci=nqx.default
 vendor.qti.nfc.chipid=0x51
 
-# Perfgenius
+# Power
 persist.irqbalance.enable=true
-ro.config.hw_perfgenius=true
-ro.config.hw_board_ipa=true
 
 # RIL
 ro.config.ipv4.mtu=1400
