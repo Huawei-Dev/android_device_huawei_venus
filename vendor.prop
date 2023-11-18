@@ -68,9 +68,6 @@ ro.netflix.bsp_rev=Q660-13149-1
 ro.hardware.nfc_nci=nqx.default
 vendor.qti.nfc.chipid=0x51
 
-# Power
-persist.irqbalance.enable=true
-
 # RIL
 ro.config.ipv4.mtu=1400
 net.tethering.noprovisioning=true
