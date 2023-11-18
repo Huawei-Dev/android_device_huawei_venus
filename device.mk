@@ -19,7 +19,10 @@ LOCAL_PATH := device/huawei/venus
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/huawei/venus \
-    vendor/nxp/opensource/pn5xx
+    vendor/nxp/opensource/pn5xx \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    device/huawei/venus/power-libperfmgr
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -249,7 +252,7 @@ PRODUCT_COPY_FILES += \
     
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power.stats@1.0-service.mock
+    android.hardware.power-service.hisi-libperfmgr
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/perfgenius_boost_policy.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perfgenius_boost_policy.xml \
