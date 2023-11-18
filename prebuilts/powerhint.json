@@ -4,7 +4,7 @@
             "Name": "CPULittleClusterMaxFreq",
             "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
             "Values": [
-                "1805000",
+                "1709000",
                 "1306000"
             ],
             "DefaultIndex": 0,
@@ -14,10 +14,8 @@
             "Name": "CPULittleClusterMinFreq",
             "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
             "Values": [
-                "1805000",
-                "1517000",
+                "1709000",
                 "1306000",
-                "1018000",
                 "807000",
                 "480000"
             ],
@@ -27,8 +25,8 @@
             "Name": "CPUBigClusterMaxFreq",
             "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
             "Values": [
-                "2304000",
-                "1517000"
+                "2112000",
+                "1805000"
             ],
             "DefaultIndex": 0,
             "ResetOnInit": true
@@ -37,13 +35,10 @@
             "Name": "CPUBigClusterMinFreq",
             "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq",
             "Values": [
-                "2304000",
+                "2112000",
                 "2016000",
                 "1805000",
-                "1517000",
-                "1210000",
-                "807000",
-                "480000"
+                "1402000"
             ],
             "ResetOnInit": true
         },
@@ -51,7 +46,7 @@
             "Name": "DDRMaxFreq",
             "Path": "/sys/class/devfreq/ddrfreq/max_freq",
             "Values": [
-                "1333000000",
+                "933000000",
                 "533000000"
             ],
             "DefaultIndex": 0,
@@ -61,9 +56,8 @@
             "Name": "DDRMinFreq",
             "Path": "/sys/class/devfreq/ddrfreq/min_freq",
             "Values": [
-                "1333000000",
-                "960000000",
-                "667000000",
+                "933000000",
+                "800000000",
                 "533000000",
                 "360000000",
                 "240000000",
@@ -87,7 +81,7 @@
             "Values": [
                 "900000000",
                 "800000000",
-                "650000000",
+                "680000000",
                 "480000000",
                 "360000000",
                 "240000000",
@@ -176,19 +170,19 @@
             "PowerHint": "LAUNCH",
             "Node": "CPULittleClusterMinFreq",
             "Duration": 3500,
-            "Value": "1805000"
+            "Value": "1709000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "CPUBigClusterMinFreq",
             "Duration": 3500,
-            "Value": "2304000"
+            "Value": "2112000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "DDRMinFreq",
             "Duration": 3500,
-            "Value": "1333000000"
+            "Value": "933000000"
         },
         {
             "PowerHint": "LAUNCH",
