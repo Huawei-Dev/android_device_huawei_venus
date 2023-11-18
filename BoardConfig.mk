@@ -154,7 +154,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Vendor Security patch level
-VENDOR_SECURITY_PATCH := 2023-08-05
+VENDOR_SECURITY_PATCH := 2023-11-05
 
 # inherit from the proprietary version
 -include vendor/huawei/venus/BoardConfigVendor.mk
