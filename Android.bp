@@ -5,6 +5,7 @@ subdirs = [
     "lights",
     "livedisplay",
     "mac_nvme",
-    "mploader",    
+    "mploader",
+    "power-libperfmgr",
     "touch",
 ]
