@@ -1,6 +1,0 @@
-# diagserver daemon
-type diagserver, domain;
-type diagserver_exec, exec_type, file_type;
-
-# Started by init
-init_daemon_domain(diagserver)

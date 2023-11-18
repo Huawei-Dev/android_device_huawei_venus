@@ -1,4 +1,0 @@
-type hwmac, domain;
-type hwmac_exec, exec_type, file_type;
-
-init_daemon_domain(hwmac)

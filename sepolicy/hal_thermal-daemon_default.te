@@ -1,0 +1,10 @@
+type hal_thermal-daemon_default, domain;
+
+type hal_thermal-daemon_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_thermal-daemon_default)
+
+# Allow to read and write cpufreq sysfs
+allow hal_thermal-daemon_default sysfs_devices_system_cpu:file rw_file_perms;
+
+# This is required for wake alarm access
+allow hal_thermal-daemon_default self:capability2 wake_alarm;
