@@ -342,8 +342,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.magic.api.version=0.1 \
     ro.enable_boot_charger_mode=0 \
     persist.sys.usb.config=manufacture,adb \
-    sys.usb.configfs=1 \
-    sys.usb.controller=hisi-usb-otg
+    sys.usb.configfs=1
     
 # Seccomp policy
 PRODUCT_COPY_FILES += \

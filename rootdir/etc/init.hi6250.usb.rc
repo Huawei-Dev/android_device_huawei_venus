@@ -49,6 +49,7 @@ on init
     mkdir /dev/usb-ffs/adb 0770 shell system
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=1000,rmode=0770,fmode=0660
     
+    setprop sys.usb.controller hisi-usb-otg
     setprop sys.usb.ffs.aio_compat 1
     setprop ro.adb.nonblocking_ffs 0
     setprop persist.adb.nonblocking_ffs 0
