@@ -289,8 +289,8 @@ PRODUCT_COPY_FILES += \
     
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio.deprecated@1.0 \
-    android.hardware.radio@1.0 \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio@1.0.vendor \
     librilutils \
     mploader
     
