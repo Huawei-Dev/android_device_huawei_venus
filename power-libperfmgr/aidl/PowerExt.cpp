@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#define ATRACE_TAG (ATRACE_TAG_POWER | ATRACE_TAG_HAL)
 #define LOG_TAG "android.hardware.power-service.hisi.ext-libperfmgr"
 
 #include "PowerExt.h"
+#include "PowerSessionManager.h"
 
 #include <mutex>
 
@@ -28,7 +28,6 @@
 #include <android-base/strings.h>
 
 #include <utils/Log.h>
-#include <utils/Trace.h>
 
 namespace aidl {
 namespace google {
@@ -39,13 +38,13 @@ namespace pixel {
 
 ndk::ScopedAStatus PowerExt::setMode(const std::string &mode, bool enabled) {
     LOG(DEBUG) << "PowerExt setMode: " << mode << " to: " << enabled;
-    ATRACE_INT(mode.c_str(), enabled);
 
     if (enabled) {
         mHintManager->DoHint(mode);
     } else {
         mHintManager->EndHint(mode);
     }
+    PowerSessionManager::getInstance()->updateHintMode(mode, enabled);
 
     return ndk::ScopedAStatus::ok();
 }
@@ -59,7 +58,6 @@ ndk::ScopedAStatus PowerExt::isModeSupported(const std::string &mode, bool *_aid
 
 ndk::ScopedAStatus PowerExt::setBoost(const std::string &boost, int32_t durationMs) {
     LOG(DEBUG) << "PowerExt setBoost: " << boost << " duration: " << durationMs;
-    ATRACE_INT(boost.c_str(), durationMs);
 
     if (durationMs > 0) {
         mHintManager->DoHint(boost, std::chrono::milliseconds(durationMs));
