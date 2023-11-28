@@ -72,6 +72,9 @@ TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2080000U
 # Encryption
 TARGET_PROVIDES_KEYMASTER := true
 
+# Encryption
+TARGET_PROVIDES_KEYMASTER := true
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/prebuilts/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/prebuilts/compatibility_matrix.xml
