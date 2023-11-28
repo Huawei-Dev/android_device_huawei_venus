@@ -119,6 +119,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio.primary.hisi_wrapper \
     audio.primary.default \
     audio.a2dp.default \
     audio.usb.default \
@@ -132,7 +133,7 @@ PRODUCT_PACKAGES += \
     tinypcminfo
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
+    android.hardware.audio.service.hisi \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.broadcastradio@1.0-impl

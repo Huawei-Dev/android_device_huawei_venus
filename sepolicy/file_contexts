@@ -1,6 +1,6 @@
 # Contexts hi6250
 
-/vendor/bin/hw/android.hardware.audio.service								u:object_r:hal_audio_default_exec:s0
+/vendor/bin/hw/android.hardware.audio.service.hisi							u:object_r:hal_audio_default_exec:s0
 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service			u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android.hardware.drm@1.2-service.widevine					u:object_r:hal_drm_default_exec:s0
 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service						u:object_r:hal_gatekeeper_default_exec:s0
