@@ -1,4 +1,5 @@
 subdirs = [
+    "audio",
     "init",
     "libshims",
     "libxcollie",
