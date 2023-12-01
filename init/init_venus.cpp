@@ -28,6 +28,12 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_2x(char const product_prop[], char const system_prop[], char const value[])
+{
+    property_override(product_prop, value);
+    property_override(system_prop, value);
+}
+
 void property_override_3x(char const product_prop[], char const system_prop[], char const vendor_prop[], char const value[])
 {
     property_override(product_prop, value);
@@ -47,10 +53,13 @@ static void set_model(const char *model) {
     property_override_3x("ro.hw.oemName", "ro.lineage.device", "ro.build.product", model);
     property_override_3x("ro.product.name", "ro.product.odm.name", "ro.product.product.name", model);
     property_override_3x("ro.product.system.name", "ro.product.system_ext.name", "ro.product.vendor.name", model);
+    property_override_2x("ro.product.odm_dlkm.name", "ro.product.vendor_dlkm.name", model);
     property_override_3x("ro.product.device", "ro.product.odm.device", "ro.product.product.device", model);
     property_override_3x("ro.product.system.device", "ro.product.system_ext.device", "ro.product.vendor.device", model);
+    property_override_2x("ro.product.odm_dlkm.device", "ro.product.vendor_dlkm.device", model);
     property_override_3x("ro.product.model", "ro.product.odm.model", "ro.product.product.model", model);
     property_override_3x("ro.product.system.model", "ro.product.system_ext.model", "ro.product.vendor.model", model);
+    property_override_2x("ro.product.odm_dlkm.model", "ro.product.vendor_dlkm.model", model);
 }
 
 void vendor_load_properties()
@@ -75,132 +84,154 @@ void vendor_load_properties()
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-L21") != std::string::npos) {
         set_model("VNS-L21");
         property_override("ro.build.description", "VNS-L21-user 7.0 HUAWEIVNS-L21 C432B391 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L21/HWVNS-H:7.0/HUAWEIVNS-L21/C432B391:user/release-keys");
-        property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L21/HWVNS-H:7.0/HUAWEIVNS-L21/C432B391:user/release-keys");
+        property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L23/HWVNS-H:7.0/HUAWEIVNS-L23/C605B396:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L23/HWVNS-H:7.0/HUAWEIVNS-L23/C605B396:user/release-keys");
     }
     else if (buf.find("VNS-L22") != std::string::npos) {
         set_model("VNS-L22");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
-        property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "dtab/BEETHOVEN/d-01J:6.0/HUAWEIBTV-L0J/17053102:user/release-keys");
-        property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "dtab/BEETHOVEN/d-01J:6.0/HUAWEIBTV-L0J/17053102:user/release-keys");
+        property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-L23") != std::string::npos) {
         set_model("VNS-L23");
         property_override("ro.build.description", "VNS-L23-user 7.0 HUAWEIVNS-L23 C605B396 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L23/HWVNS-H:7.0/HUAWEIVNS-L23/C605B396:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L23/HWVNS-H:7.0/HUAWEIVNS-L23/C605B396:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L23/HWVNS-H:7.0/HUAWEIVNS-L23/C605B396:user/release-keys");
     }
     else if (buf.find("VNS-L31") != std::string::npos) {
         set_model("VNS-L31");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-L52") != std::string::npos) {
         set_model("VNS-L52");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-L53") != std::string::npos) {
         set_model("VNS-L53");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-L62") != std::string::npos) {
         set_model("VNS-L62");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-AL00") != std::string::npos) {
         set_model("VNS-AL00");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-DL00") != std::string::npos) {
         set_model("VNS-DL00");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("VNS-TL00") != std::string::npos) {
         set_model("VNS-TL00");
         property_override("ro.build.description", "VNS-L31-user 7.0 HUAWEIVNS-L31 C530B385 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HUAWEI/VNS-L31/HWVNS-H:7.0/HUAWEIVNS-L31/C530B385:user/release-keys");
     }
     else if (buf.find("NEM-L21") != std::string::npos) {
         set_model("NEM-L21");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if (buf.find("NEM-L22") != std::string::npos) {
         set_model("NEM-L22");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if (buf.find("NEM-L51") != std::string::npos) {
         set_model("NEM-L51");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if ((buf.find("NEM-AL00") != std::string::npos) || (buf.find("NEM-AL10") != std::string::npos)) {
         set_model("NEM-AL10");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if (buf.find("NEM-TL00") != std::string::npos) {
         set_model("NEM-TL00");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if (buf.find("NEM-TL00H") != std::string::npos) {
         set_model("NEM-TL00H");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if (buf.find("NEM-UL10") != std::string::npos) {
         set_model("NEM-UL10");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if (buf.find("NMO-L01") != std::string::npos) {
         set_model("NMO-L01");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if ((buf.find("NMO-L22") != std::string::npos) || (buf.find("NMO-L02") != std::string::npos)) {
         set_model("NMO-L22");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if ((buf.find("NMO-L23") != std::string::npos) || (buf.find("NMO-L03") != std::string::npos)) {
         set_model("NMO-L23");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else if ((buf.find("NMO-L31") != std::string::npos) || (buf.find("NMO-L51") != std::string::npos)) {
         set_model("NMO-L31");
         property_override("ro.build.description", "NEM-L51-user 7.0 HONORNEM-L51 C432B359 release-keys");
         property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
         property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
+        property_override_2x("ro.odm_dlkm.build.fingerprint", "ro.vendor_dlkm.build.fingerprint",  "HONOR/NEM-L51/HNNEM-H:7.0/HONORNEM-L51/C432B359:user/release-keys");
     }
     else {
 	property_override("ro.product.model", "UNKNOWN");
