@@ -9,6 +9,7 @@ on early-init
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
     
 on init
+    wait /dev/block/platform/hi_mci.0
     symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
     
     write /sys/module/hisi_nve/parameters/nve /dev/block/bootdevice/by-name/nvme
