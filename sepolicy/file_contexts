@@ -20,6 +20,7 @@
 /vendor/bin/hw/vendor.lineage.touch@1.0-service.hi6250						u:object_r:hal_lineage_touch_default_exec:s0
 /vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service      						u:object_r:hal_nfc_default_exec:s0
 
+/vendor/bin/audio_patch														u:object_r:hal_audio_default_exec:s0
 /vendor/bin/atcmdserver														u:object_r:hal_atcmdserver_default_exec:s0
 /vendor/bin/diagserver														u:object_r:hal_diagserver_default_exec:s0
 /vendor/bin/gnss_control_hisi												u:object_r:hal_gnss_default_exec:s0

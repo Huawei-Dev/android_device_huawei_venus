@@ -280,6 +280,8 @@ on fs
 on late-fs
     mount_all /vendor/etc/fstab.hi6250 --late
     
+    start audio_patch
+    
 on post-fs
     chown system system /proc/uid_cputime/show_uid_stat
     chmod 0440 /proc/uid_cputime/show_uid_stat
@@ -1106,6 +1108,12 @@ service hivwserver /vendor/bin/hivwserver
 on property:ro.config.hw_vowifi=true
     class_start vowifi
     start iked
+    
+service audio_patch /vendor/bin/audio_patch
+    class main
+    user root
+    group system
+    oneshot
     
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true

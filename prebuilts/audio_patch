@@ -1,0 +1,23 @@
+#!/vendor/bin/sh
+
+audio=/vendor/etc/audio
+
+if [ ! -f ${audio} ]
+then
+mount -o remount,rw /vendor
+mkdir vendor/etc/audio
+chmod 0755 vendor/etc/audio
+chown root.shell vendor/etc/audio
+cp -rf /produce/etc/audio/* /vendor/etc/audio/
+chmod 0755 vendor/etc/audio/*
+chmod 0644 vendor/etc/audio/algorithm/*
+chmod 0644 vendor/etc/audio/dts/*
+chmod 0644 vendor/etc/audio/hi6402/*
+chmod 0644 vendor/etc/audio/hissc/*
+chmod 0644 vendor/etc/audio/maxim/*
+chmod 0644 vendor/etc/audio/mbdrc/*
+chmod 0644 vendor/etc/audio/modem/*
+chmod 0644 vendor/etc/audio/nxp/*
+chmod 0644 vendor/etc/audio/sws/*
+mount -o remount,ro /vendor
+fi
