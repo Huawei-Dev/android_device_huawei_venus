@@ -139,6 +139,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
     
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.a2dp@1.0.vendor
+    
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
