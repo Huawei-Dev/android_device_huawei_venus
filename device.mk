@@ -124,24 +124,15 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.hisi_wrapper \
-    audio.primary.default \
     audio.usb.default \
-    audio.r_submix.default \
-    libaudioutils \
-    libaudioroute \
-    libtinyalsa \
-    tinyplay \
-    tinycap \
-    tinymix \
-    tinypcminfo
+    audio.r_submix.default
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.service.hisi \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@4.0-impl \
-    android.hardware.broadcastradio@1.0-impl
+    android.hardware.audio.effect@4.0-impl
     
 # BT
 PRODUCT_PACKAGES += \
