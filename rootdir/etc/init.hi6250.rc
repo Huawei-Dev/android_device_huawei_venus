@@ -195,15 +195,6 @@ on init
     chown system system /dev/cpuset/vip/tasks
     chmod 0664 /dev/cpuset/vip/tasks
 
-    mkdir /dev/stune/vip
-    chown system system /dev/stune/vip
-    chown system system /dev/stune/vip/tasks
-    chmod 0664 /dev/stune/vip/tasks
-    chown system system /dev/stune/vip/schedtune.boost
-    chmod 0664 /dev/stune/vip/schedtune.boost
-    write /dev/stune/top-app/schedtune.prefer_idle 1
-    write /dev/stune/vip/schedtune.prefer_idle 1
-
     chmod  0660  /dev/madapt
     chown  radio  radio  /dev/madapt
     
@@ -212,6 +203,10 @@ on init
 
     chmod 0660 /dev/ttyAMA1
     chown radio radio /dev/ttyAMA1
+    
+    mkdir /dev/stune 666 system system
+    mkdir /dev/stune/vip 766 system system
+    mkdir /dev/stune/top-app 766 system system
     
     chmod 0660 /dev/hwlog_tag
     chown system system /dev/hwlog_tag
@@ -281,6 +276,7 @@ on late-fs
     mount_all /vendor/etc/fstab.hi6250 --late
     
     start audio_patch
+    start schedtune
     
 on post-fs
     chown system system /proc/uid_cputime/show_uid_stat
@@ -1117,6 +1113,12 @@ service audio_patch /vendor/bin/audio_patch
     
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true
+
+service schedtune /vendor/bin/schedtune
+    class main
+    user root
+    group system
+    oneshot
 
 on property:ro.config.enable_rcc=true
     write /sys/kernel/rcc/event PASSIVE_MODE
