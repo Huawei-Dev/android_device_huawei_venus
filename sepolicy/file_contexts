@@ -31,6 +31,7 @@
 /vendor/bin/octty															u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/oeminfo_nvm_server											u:object_r:hwoeminfo_exec:s0
 /vendor/bin/start_connectivity_hisi											u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/schedtune														u:object_r:hal_sched_default_exec:s0
 /vendor/bin/teecd															u:object_r:tee_exec:s0
 
 /vendor/xbin/gnss_watchlssd_thirdparty										u:object_r:hal_gnss_default_exec:s0

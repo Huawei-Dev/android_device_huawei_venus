@@ -1,0 +1,17 @@
+#!/vendor/bin/sh
+
+mount -t cgroup -o schedtune stune /dev/stune/vip
+
+mount -t cgroup -o schedtune stune /dev/stune/top-app
+
+chown system system /dev/stune/vip/tasks
+chmod 0664 /dev/stune/vip/tasks
+chown system system /dev/stune/vip/schedtune.boost
+chmod 0664 /dev/stune/vip/schedtune.boost
+write /dev/stune/vip/schedtune.prefer_idle 1
+    
+chown system system /dev/stune/top-app/tasks
+chmod 0664 /dev/stune/top-app/tasks
+chown system system /dev/stune/top-app/schedtune.boost
+chmod 0664 /dev/stune/top-app/schedtune.boost
+write /dev/stune/top-app/schedtune.prefer_idle 1
