@@ -1167,3 +1167,6 @@ on property:ro.config.enable_rcc=true
     write /sys/kernel/rcc/event PASSIVE_MODE
     write /sys/kernel/rcc/max_anon_clean_size 448M
     write /sys/kernel/rcc/enable 1
+    
+on property:sys.boot_completed=1
+    exec - system system -- /system/bin/service call SurfaceFlinger 1008 i32 1
