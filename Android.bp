@@ -1,11 +1,11 @@
 subdirs = [
     "audio",
+    "hisi_init",
     "init",
     "libshims",
     "libxcollie",
     "lights",
     "livedisplay",
-    "mac_nvme",
     "mploader",
     "power-libperfmgr",
     "touch",
