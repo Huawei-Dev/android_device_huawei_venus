@@ -288,6 +288,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.common@1.0_types.vendor \
     android.hardware.radio@1.0_types.vendor \
     libtinyxml2_shim.vendor \
+    libhidlbase_shim \
     liblog_vendor
 
 # Sensors
