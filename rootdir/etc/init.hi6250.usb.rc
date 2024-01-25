@@ -342,12 +342,3 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,serial,adb  && 
     setprop sys.usb.start_modempcui 0
     write /sys/class/net/rndis0/queues/rx-0/rps_cpus f
     setprop sys.usb.state ${sys.usb.config}
-    
-on property:sys.usb.config=adb
-    stop adbd
-    write /sys/class/android_usb/android0/idVendor 0bb4
-    write /sys/class/android_usb/android0/idProduct 0c81
-    write /sys/class/android_usb/android0/functions ${sys.usb.config}
-    start adbd
-    write /sys/devices/platform/android_usb/usb_function_switch 2
-    setprop sys.usb.state ${sys.usb.config}
