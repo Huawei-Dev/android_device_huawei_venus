@@ -347,6 +347,4 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.enable_boot_charger_mode=0 \
     persist.sys.usb.config=manufacture,adb
     
-PRODUCT_GMS_CLIENTID_BASE := android-huawei
-
 $(call inherit-product, vendor/huawei/venus/venus-vendor.mk)
