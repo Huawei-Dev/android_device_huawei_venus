@@ -347,10 +347,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.enable_boot_charger_mode=0 \
     persist.sys.usb.config=manufacture,adb
     
-# Seccomp policy
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
-    
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
 $(call inherit-product, vendor/huawei/venus/venus-vendor.mk)
