@@ -80,10 +80,6 @@ renderthread.skia.reduceopstasksplitting=true
 # Touch
 persist.sys.fingersense=1
 
-# WiFi
-wifi.interface=wlan0
-wifi.direct.interface=p2p-dev-wlan0
-
 # WiFi Display
 persist.debug.wfd.enable=1
 
