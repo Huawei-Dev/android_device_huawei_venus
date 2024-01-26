@@ -282,11 +282,10 @@ PRODUCT_PACKAGES += \
     init.hi6250.power.rc \
     init.hi6250.rc \
     init.hi6250.usb.rc \
-    init.recovery.hi6250.rc \
     ueventd.hi6250.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.hi6250:$(TARGET_COPY_OUT_RAMDISK)/fstab.hi6250
+        $(LOCAL_PATH)/rootdir/etc/init.recovery.hi6250.rc:$(TARGET_RECOVERY_OUT)/root/init.recovery.hi6250.rc
     
 # RIL
 PRODUCT_PACKAGES += \
