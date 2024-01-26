@@ -4,7 +4,7 @@ subdirs = [
     "init",
     "libshims",
     "libxcollie",
-    "lights",
+    "light",
     "livedisplay",
     "mploader",
     "power-libperfmgr",

@@ -15,6 +15,7 @@
 /vendor/bin/hw/vendor.huawei.hardware.hisupl@1.0-service						u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.hwdisplay@1.0-service					u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.hwdisplay.displayengine@1.0-service	u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android.hardware.light-service.hisi								u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android.hardware.power-service.hisi-libperfmgr					u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/vendor.lineage.livedisplay@2.1-service-hisi						u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 /vendor/bin/hw/vendor.lineage.touch@1.0-service.hi6250						u:object_r:hal_lineage_touch_default_exec:s0
