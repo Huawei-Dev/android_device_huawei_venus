@@ -405,8 +405,6 @@ on post-fs-data
     mkdir /data/drm/rights 0770 drm drm
     mkdir /data/drm/widevine 0770 drm drm
     
-    mkdir /mnt/media_rw 0750 media_rw media_rw
-    
     setprop vold.post_fs_data_done 1
 
 on early-boot
