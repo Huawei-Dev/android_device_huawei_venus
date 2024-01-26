@@ -264,7 +264,7 @@ on init
     
 on early-fs
     wait /dev/block/bootdevice/by-name/oeminfo
-    start oeminfo_nvm
+    start vendor.oeminfo_nvm
 
 on fs    
     mount_all /vendor/etc/fstab.hi6250 --early
@@ -280,8 +280,8 @@ on fs
 on late-fs
     mount_all /vendor/etc/fstab.hi6250 --late
     
-    start audio_patch
-    start schedtune
+    start vendor.audio_patch
+    start vendor.schedtune
     
 on post-fs
     chown system system /proc/uid_cputime/show_uid_stat
@@ -302,7 +302,7 @@ on post-fs-data
     restorecon /data/sec_storage_data_users
     mkdir /data/vendor/log/sec_storage_data 0775 system system
     mkdir /data/vendor/log/sec_storage_data/log 0755 system system
-    start teecd
+    start vendor.teecd
     
     mkdir /data/vendor/nfc 0777 nfc nfc
     mkdir /data/vendor/nfc/param 0777 nfc nfc
@@ -1061,7 +1061,7 @@ on charger
     class_start charger
 
 # Start service here
-service charger /vendor/bin/hw_charger -p
+service vendor.charger /vendor/bin/hw_charger -p
     class charger
     user root
     group root system
@@ -1109,44 +1109,44 @@ on property:ro.multi.rild=false
     symlink /dev/socket/rildm3 /dev/socket/rild3
 
 # Not used in getprop !!!    
-service atcmdserver /vendor/bin/atcmdserver
+service vendor.atcmdserver /vendor/bin/atcmdserver
     class main
     group root system nfc graphics audio camera
     disabled
        
-service diagserver /vendor/bin/diagserver
+service vendor.diagserver /vendor/bin/diagserver
     class main
     user root
     disabled
     
-service teecd /vendor/bin/teecd
+service vendor.teecd /vendor/bin/teecd
     class core
     user root
     group root system readproc
     disabled
     seclabel u:r:tee:s0
     
-service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
+service vendor.oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     class core
     critical
     ioprio rt 4
     
-service iked /vendor/bin/iked
+service vendor.iked /vendor/bin/iked
     class late_start
     user root
     disabled
     group system
     
-service hivwserver /vendor/bin/hivwserver
+service vendor.hivwserver /vendor/bin/hivwserver
     class vowifi
     user system
     group audio inet net_bt net_bt_admin net_bw_acct system
 	
 on property:ro.config.hw_vowifi=true
     class_start vowifi
-    start iked
+    start vendor.iked
     
-service audio_patch /vendor/bin/audio_patch
+service vendor.audio_patch /vendor/bin/audio_patch
     class main
     user root
     group system
@@ -1155,7 +1155,7 @@ service audio_patch /vendor/bin/audio_patch
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true
 
-service schedtune /vendor/bin/schedtune
+service vendor.schedtune /vendor/bin/schedtune
     class main
     user root
     group system

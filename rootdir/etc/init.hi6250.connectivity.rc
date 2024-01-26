@@ -21,53 +21,53 @@ on property:sys.conn_macs.ready=1
     chown wifi wifi /data/vendor/wifi/macwlan
     chmod 0666 /data/vendor/wifi/macwlan
 
-service octty /vendor/bin/octty
+service vendor.octty /vendor/bin/octty
     class core
     user system
     group system bluetooth root media
     disabled
 
-service oam_hisi /vendor/bin/oam_hisi
+service vendor.oam_hisi /vendor/bin/oam_hisi
     class main
     user system
     group system root wifi bluetooth
     oneshot
     disabled
     
-service hisi_bfg /vendor/bin/start_connectivity_hisi dir_p_mode
+service vendor.hisi_bfg /vendor/bin/start_connectivity_hisi dir_p_mode
     class late_start
     user root
     group system wifi
     oneshot
     
 on property:vendor.setup_hi110x_modules=success
-    start octty
-    start oam_hisi
-    start hsgnss
-    start agnsscontrol
-    start supl20clientd
-    start watchlssd
+    start vendor.octty
+    start vendor.oam_hisi
+    start vendor.hsgnss
+    start vendor.agnsscontrol
+    start vendor.supl20clientd
+    start vendor.watchlssd
     write /dev/kmsg "vendor.setup_hi110x_modules has started"
 
-service hsgnss /vendor/bin/gnss_engine_hisi -normal
+service vendor.hsgnss /vendor/bin/gnss_engine_hisi -normal
     class main
     user gps
     group system inet root wakelock
     disabled
 
-service agnsscontrol /vendor/bin/gnss_control_hisi -normal
+service vendor.agnsscontrol /vendor/bin/gnss_control_hisi -normal
     class main
     user gps
     group system inet root wakelock
     disabled
 
-service supl20clientd /vendor/bin/gnss_supl20clientd_hisi
+service vendor.supl20clientd /vendor/bin/gnss_supl20clientd_hisi
     class main
     user system
     group system inet
     disabled
 
-service watchlssd /vendor/bin/gnss_watchlssd_thirdparty
+service vendor.watchlssd /vendor/bin/gnss_watchlssd_thirdparty
     class main
     user gps
     group system inet net_raw wakelock
