@@ -352,6 +352,7 @@ include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1 \
+    sys.oem_unlock_allowed=1 \
     ro.magic.api.version=0.1 \
     ro.enable_boot_charger_mode=0 \
     persist.sys.usb.config=manufacture,adb
