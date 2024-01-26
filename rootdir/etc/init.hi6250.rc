@@ -267,8 +267,6 @@ on fs
 
     mount_all /vendor/etc/fstab.hi6250 --early
     
-    mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
-    
     mkdir /splash2/log 0775 system log
     symlink /splash2/fac_log /data/log/fac_log
     
