@@ -50,8 +50,7 @@
     <value>2112000</value><!-- 2.1 GHz CPU speed -->
   </array>
   <array name="cpu.clusters.cores">
-        <value>4</value>
-        <value>4</value>
+        <value>8</value>
   </array>
   <!-- Power consumption in suspend -->
   <item name="cpu.suspend">3.14</item> <!-- k3v5 -->
