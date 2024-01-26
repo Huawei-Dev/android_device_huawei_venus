@@ -10,6 +10,7 @@ on post-fs-data
     mkdir /data/vendor/bluedroid 0771 bluetooth bluetooth
     
     mkdir /data/vendor/gnss 0770 system system
+    mkdir /data/vendor/cust_conn 0770 system system
 
 service octty /vendor/bin/octty
     class core
@@ -24,20 +25,20 @@ service oam_hisi /vendor/bin/oam_hisi
     oneshot
     disabled
     
-service hisi_bfg /vendor/bin/start_connectivity_hisi
+service hisi_bfg /vendor/bin/start_connectivity_hisi dir_p_mode
     class late_start
     user root
-    group system
+    group system wifi
     oneshot
     
-on property:setup_hi110x_modules=success
+on property:vendor.setup_hi110x_modules=success
     start octty
     start oam_hisi
     start hsgnss
     start agnsscontrol
     start supl20clientd
     start watchlssd
-    write /dev/kmsg "hi110x_modules has started"
+    write /dev/kmsg "vendor.setup_hi110x_modules has started"
 
 service hsgnss /vendor/bin/gnss_engine_hisi -normal
     class main
