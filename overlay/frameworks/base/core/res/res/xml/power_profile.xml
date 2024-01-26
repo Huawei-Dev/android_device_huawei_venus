@@ -19,26 +19,31 @@
 <device name="Android">
   <!-- All values are in mA except as noted -->
   <item name="none">0</item>
-  <item name="screen.on.display0">39</item> <!-- min brite -->
-  <item name="bluetooth.active">0.1</item>
+  <item name="screen.on.display0">114</item> <!-- min brite -->
+  <item name="bluetooth.active">97</item>
   <item name="bluetooth.on">0.6</item>
   <item name="bluetooth.at">0.6</item> <!-- TBD -->
-  <item name="screen.full.display0">264</item> <!-- backlight 16 leds -->
+  <item name="screen.full.display0">302</item> <!-- backlight 16 leds -->
   <item name="wifi.on">0.6</item>
   <item name="wifi.active">128</item>
-  <item name="wifi.scan">60</item>
-  <item name="audio">17</item> <!-- k3v5 -->
-  <item name="video">55</item>
-  <item name="radio.active">290</item>
+  <item name="wifi.scan">146</item>
+  <item name="audio">43</item> <!-- k3v5 -->
+  <item name="video">176</item>
+  <item name="radio.active">190</item>
   <item name="gps.on">70</item>
   <item name="battery.capacity">3000</item> <!-- 3000mAh -->
-  <item name="radio.scanning">27</item> <!-- TBD -->
+  <item name="radio.scanning">65</item> <!-- TBD -->
   <!-- Current consumed by the radio at different signal strengths, when paging  -->
   <array name="radio.on"> <!-- 1 entry per signal strength bin, TBD -->
-    <value>2.6</value>
-    <value>2.6</value>
+    <value>13.0</value>
+    <value>10.0</value>
+    <value>10.0</value>
+    <value>10.0</value>
+    <value>10.0</value>
   </array>
-  <item name="cpu.clusters.cores">4</item>
+  <array name="cpu.clusters.cores">
+        <value>8</value>
+  </array>
   <array name="cpu.core_speeds.cluster0">
     <value>480000</value> <!-- 480 MHz CPU speed -->
     <value>807000</value> <!-- 807 MHz CPU speed -->
@@ -49,11 +54,8 @@
     <value>2016000</value><!-- 2.0 GHz CPU speed -->
     <value>2112000</value><!-- 2.1 GHz CPU speed -->
   </array>
-  <array name="cpu.clusters.cores">
-        <value>8</value>
-  </array>
   <!-- Power consumption in suspend -->
-  <item name="cpu.suspend">3.14</item> <!-- k3v5 -->
+  <item name="cpu.suspend">4</item> <!-- k3v5 -->
   <!-- Power consumption due to wake lock held -->
   <item name="cpu.idle">43</item> <!-- k3v5 -->
   <!-- Power consumption at different speeds -->
