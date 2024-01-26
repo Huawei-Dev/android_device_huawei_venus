@@ -295,10 +295,13 @@ on post-fs
     chmod 0660 /proc/uid_iostats/remove_uid_list
     
 on post-fs-data
-    setprop sys.userdata_is_ready 1
+    mkdir /data/sec_storage_data 0700 system system
+    restorecon /data/sec_storage_data
+    mkdir /data/sec_storage_data_users 0700 system system
+    restorecon /data/sec_storage_data_users
+    mkdir /data/vendor/log/sec_storage_data 0775 system system
+    mkdir /data/vendor/log/sec_storage_data/log 0755 system system
     start teecd
-    setprop init.svc.console stopped
-    setprop persist.sys.kmemleak.debug 0
     
     mkdir /data/vendor/nfc 0777 nfc nfc
     mkdir /data/vendor/nfc/param 0777 nfc nfc
@@ -405,6 +408,9 @@ on post-fs-data
     mkdir /data/drm/rights 0770 drm drm
     mkdir /data/drm/widevine 0770 drm drm
     
+    setprop sys.userdata_is_ready 1
+    setprop init.svc.console stopped
+    setprop persist.sys.kmemleak.debug 0
     setprop vold.post_fs_data_done 1
 
 on early-boot
@@ -1088,6 +1094,8 @@ service teecd /vendor/bin/teecd
     class core
     user root
     group root system readproc
+    disabled
+    seclabel u:r:tee:s0
     
 service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     class core
