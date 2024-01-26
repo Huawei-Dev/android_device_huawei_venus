@@ -272,7 +272,7 @@ on fs
     
     setprop ro.crypto.fuse_sdcard true
     
-    restorecon       /sys/class/graphics/fb0/lcd_cabc_mode
+    restorecon       /sys/class/graphics/fb0/lcd_color_temperature
     restorecon       /sys/class/leds/torch/flash_thermal_protect
 
 on late-fs
