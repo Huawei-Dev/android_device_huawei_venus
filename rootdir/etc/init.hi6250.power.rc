@@ -134,17 +134,6 @@ on property:sys.boot_completed=1
     write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,55296,80640"
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 80640
     
-on charger
-    # Offline all cores other than CPU0
-    write /sys/devices/system/cpu/cpu1/online 0
-    write /sys/devices/system/cpu/cpu2/online 0
-    write /sys/devices/system/cpu/cpu3/online 0
-    write /sys/devices/system/cpu/cpu4/online 0
-    write /sys/devices/system/cpu/cpu5/online 0
-    write /sys/devices/system/cpu/cpu6/online 0
-    write /sys/devices/system/cpu/cpu7/online 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
-
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 

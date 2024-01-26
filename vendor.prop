@@ -23,6 +23,7 @@ bluetooth.profile.sap.server.enabled?=true
 
 # Charger
 ro.charger.disable_init_blank=true
+ro.charger.enable_suspend=true
 
 # Dalvik
 dalvik.vm.heapstartsize=16m

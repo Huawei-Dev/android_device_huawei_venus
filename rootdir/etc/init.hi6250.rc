@@ -1036,9 +1036,37 @@ on data_not_ready
     write /proc/data-ready 0
     
 on charger
-    import /vendor/etc/init/hw/init.charger.rc
+    chown system system /sys/devices/platform/ff100000.hisi_usb/plugusb
+    chmod 0660 /sys/devices/platform/ff100000.hisi_usb/plugusb
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq/interactive
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 807000
+    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chmod 0660 /sys/class/hw_power/charger/charge_data/iin_thermal
+    chown system system /sys/class/hw_power/charger/charge_data/iin_thermal
+    chmod 0660 /sys/class/hw_power/charger/charge_data/iin_thermal_aux
+    chown system system /sys/class/hw_power/charger/charge_data/iin_thermal_aux
+    chmod 0660 /sys/class/hw_power/charger/charge_data/limit_charging
+    chown system system /sys/class/hw_power/charger/charge_data/limit_charging
+    chown system system /sys/class/android_usb/android0/switch_request
+    chmod 0664 /sys/class/android_usb/android0/switch_request
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor powersave
+    write /sys/class/devfreq/ddrfreq/min_freq 0
+    write /sys/class/devfreq/ddrfreq/max_freq 0
+    write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 933000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 933000000
+    setprop sys.usb.configfs 0
+    setprop persist.sys.usb.config mass_storage
+    class_start charger
 
 # Start service here
+service charger /vendor/bin/hw_charger -p
+    class charger
+    user root
+    group root system
+    capabilities SYS_BOOT
+    seclabel u:r:charger:s0
     
 service ril-daemon /vendor/bin/hw/rild
     disabled
