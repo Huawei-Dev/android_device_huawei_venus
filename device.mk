@@ -270,7 +270,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.hi6250 \
     fstab.modem \
-    init.charger.rc \
     init.hi6250.connectivity.rc \
     init.hi6250.hisi.rc \
     init.hi6250.power.rc \
