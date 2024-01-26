@@ -269,6 +269,11 @@ on fs
     
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
     
+    mkdir /splash2/log 0775 system log
+    symlink /splash2/fac_log /data/log/fac_log
+    
+    setprop ro.crypto.fuse_sdcard true
+    
     restorecon       /sys/class/graphics/fb0/lcd_cabc_mode
     restorecon       /sys/class/leds/torch/flash_thermal_protect
 
@@ -390,6 +395,9 @@ on post-fs-data
 
     mkdir /splash2/boot_fail 0775 root system
     restorecon_recursive /splash2/boot_fail
+    
+    mkdir /splash2/storage 0770 root system
+    restorecon_recursive /splash2/storage
     
     mkdir /data/misc/radvd 0770 root root
     mkdir /data/misc/dhcp6s 0770 root root
