@@ -67,7 +67,7 @@ service vendor.supl20clientd /vendor/bin/gnss_supl20clientd_hisi
     group system inet
     disabled
 
-service vendor.watchlssd /vendor/bin/gnss_watchlssd_thirdparty
+service vendor.watchlssd /vendor/xbin/gnss_watchlssd_thirdparty
     class main
     user gps
     group system inet net_raw wakelock
