@@ -353,6 +353,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     sys.oem_unlock_allowed=1 \
     ro.magic.api.version=0.1 \
     ro.enable_boot_charger_mode=0 \
+    ro.adb.secure.recovery=0 \
     persist.sys.usb.config=manufacture,adb
     
 # Seccomp policy
