@@ -1154,6 +1154,8 @@ service vendor.audio_patch /vendor/bin/audio_patch
     
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true
+    write /proc/sys/vm/dirty_expire_centisecs 200
+    write /proc/sys/vm/dirty_background_ratio  5
 
 service vendor.schedtune /vendor/bin/schedtune
     class main
