@@ -220,8 +220,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxcollie \
     libhwlog \
-    libchrlog
-    
+    libchrlog \
+    libhilog
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0.vendor \

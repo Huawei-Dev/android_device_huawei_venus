@@ -46,3 +46,15 @@ cc_library_shared {
         "liblog",
     ],
 }
+
+cc_library_shared {
+    name: "libhilog",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "hilog.c",
+    ],
+    shared_libs: [
+        "liblog",
+    ],
+}
