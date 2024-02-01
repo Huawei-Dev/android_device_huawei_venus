@@ -218,7 +218,9 @@ PRODUCT_PACKAGES += \
     
 # Misc
 PRODUCT_PACKAGES += \
-    libxcollie
+    libxcollie \
+    libhwlog \
+    libchrlog
     
 # NFC
 PRODUCT_PACKAGES += \
