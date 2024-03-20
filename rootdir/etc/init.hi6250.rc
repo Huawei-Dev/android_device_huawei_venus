@@ -1165,3 +1165,12 @@ service HwCamCfgSvr /vendor/bin/HwCamCfgSvr hi6250 ${ro.product.camera_product}
     class main
     user media
     group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system
+    
+service vendor.hwcomposer-2-2 /vendor/bin/hw/android.hardware.graphics.composer@2.2-service
+    override
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    task_profiles HighPerformance
