@@ -244,6 +244,9 @@ PRODUCT_COPY_FILES += \
     
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power-service.pixel-libperfmgr
+
+PRODUCT_PACKAGES += \
     libiawareperf_client \
     libperfgenius_vendor_client
 
