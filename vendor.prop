@@ -22,6 +22,7 @@ bluetooth.profile.pan.nap.enabled?=true
 bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
+persist.sys.bt.esco_transport_unit_size=16
 
 # Charger
 ro.charger.disable_init_blank=true
