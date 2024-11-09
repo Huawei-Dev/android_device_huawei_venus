@@ -70,10 +70,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/privapp_whitelist_com.android.supl.xml:$(TARGET_COPY_OUT_SYSTEM)/system_ext/etc/permissions/privapp_whitelist_com.android.supl.xml
     
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.1.vendor \
-    android.hardware.gnss@2.1 \
-    android.hardware.gnss.measurement_corrections@1.0 \
-    android.hardware.gnss.visibility_control@1.0
+    android.hardware.gnss.measurement_corrections@1.0.vendor \
+    android.hardware.gnss.visibility_control@1.0.vendor \
+    android.hardware.gnss@2.0.vendor
     
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor
