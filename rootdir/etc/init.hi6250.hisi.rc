@@ -27,35 +27,35 @@ on property:persist.sys.fingersense=0
     write /sys/devices/platform/huawei_sensor/set_fingersense_enable 0
     write /sys/devices/platform/huawei_touch/roi_enable 0
     
-on property:ro.product.device=NEM-L21
+on property:ro.product.model=NEM-L21
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NEM-L22
+on property:ro.product.model=NEM-L22
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NEM-L51
+on property:ro.product.model=NEM-L51
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NEM-AL10
+on property:ro.product.model=NEM-AL10
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NEM-TL00
+on property:ro.product.model=NEM-TL00
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NEM-TL00H
+on property:ro.product.model=NEM-TL00H
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NEM-UL10
+on property:ro.product.model=NEM-UL10
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NMO-L01
+on property:ro.product.model=NMO-L01
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NMO-L22
+on property:ro.product.model=NMO-L22
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NMO-L23
+on property:ro.product.model=NMO-L23
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
     
-on property:ro.product.device=NMO-L31 
+on property:ro.product.model=NMO-L31 
     write /sys/module/snd_soc_hi6555c/parameters/hs_3_pole_max_voltage 15
