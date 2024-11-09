@@ -11,8 +11,6 @@
 
 #include <android-base/logging.h>
 
-#include <sys/sysinfo.h>
-
 #define HEAPSTARTSIZE_PROP "dalvik.vm.heapstartsize"
 #define HEAPGROWTHLIMIT_PROP "dalvik.vm.heapgrowthlimit"
 #define HEAPSIZE_PROP "dalvik.vm.heapsize"
@@ -22,49 +20,20 @@
 
 #define GB(b) (b * 1024ull * 1024 * 1024)
 
-static const dalvik_heap_info_t dalvik_heap_info_6144 = {
+static const dalvik_heap_info_t dalvik_heap_info = {
         .heapstartsize = "16m",
-        .heapgrowthlimit = "256m",
-        .heapsize = "512m",
-        .heapminfree = "8m",
-        .heapmaxfree = "32m",
-        .heaptargetutilization = "0.5",
-};
-
-static const dalvik_heap_info_t dalvik_heap_info_4096 = {
-        .heapstartsize = "8m",
-        .heapgrowthlimit = "256m",
-        .heapsize = "512m",
-        .heapminfree = "8m",
-        .heapmaxfree = "16m",
-        .heaptargetutilization = "0.6",
-};
-
-static const dalvik_heap_info_t dalvik_heap_info_2048 = {
-        .heapstartsize = "8m",
-        .heapgrowthlimit = "192m",
-        .heapsize = "512m",
-        .heapminfree = "512k",
+        .heapgrowthlimit = "64m",
+        .heapsize = "128m",
+        .heapminfree = "2m",
         .heapmaxfree = "8m",
         .heaptargetutilization = "0.75",
 };
 
 void load_dalvik() {
-    struct sysinfo sys;
     const dalvik_heap_info_t* dhi;
 
-    sysinfo(&sys);
-
-    if (sys.totalram > GB(5)) {
-        LOG(INFO) << "Setting dalvik props for >6gb devices";
-        dhi = &dalvik_heap_info_6144;
-    } else if (sys.totalram > GB(3)) {
-        LOG(INFO) << "Setting dalvik props for >4gb devices";
-        dhi = &dalvik_heap_info_4096;
-    } else {
-        LOG(INFO) << "Setting dalvik props for <3gb devices";
-        dhi = &dalvik_heap_info_2048;
-    }
+    LOG(INFO) << "Setting dalvik props for device";
+    dhi = &dalvik_heap_info;
 
     property_override(HEAPSTARTSIZE_PROP, dhi->heapstartsize);
     property_override(HEAPGROWTHLIMIT_PROP, dhi->heapgrowthlimit);
