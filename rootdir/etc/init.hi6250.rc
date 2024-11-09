@@ -1160,3 +1160,8 @@ on property:ro.config.enable_rcc=true
     write /sys/kernel/rcc/event PASSIVE_MODE
     write /sys/kernel/rcc/max_anon_clean_size 448M
     write /sys/kernel/rcc/enable 1
+
+service HwCamCfgSvr /vendor/bin/HwCamCfgSvr hi6250 ${ro.product.camera_product}
+    class main
+    user media
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system
