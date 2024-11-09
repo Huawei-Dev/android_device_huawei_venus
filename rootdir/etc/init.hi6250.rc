@@ -1163,3 +1163,8 @@ on property:ro.config.enable_rcc=true
     
 on property:sys.boot_completed=1
     exec - system system -- /system/bin/service call SurfaceFlinger 1008 i32 1
+
+service HwCamCfgSvr /vendor/bin/HwCamCfgSvr hi6250 ${ro.product.camera_product}
+    class main
+    user media
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system

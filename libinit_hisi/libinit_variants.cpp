@@ -95,19 +95,20 @@ ProductInfo ReadProductInfo() {
 
 void load_variants() {
     ProductInfo product_info = ReadProductInfo();
-    string model_info, camera_info;
-    int i;
+    string model_info;
 
     // Load the phone model dynamically from the oeminfo partition.
     if (!product_info.model.empty()) {
         LOG(INFO) << "Found product info: " << product_info.model << " " << product_info.version
                   << " " << product_info.region_type;
         for (int i = 0; i < 7; i++)
-       	    model_info.push_back(product_info.model[i]);
+       		model_info.push_back(product_info.model[i]);
         set_ro_build_prop("model", model_info, true);
-        for (int i = 0; i < 3; i++)
-            camera_info.push_back(model_info[i]);
-        set_ro_build_prop("camera_product", camera_info, true);    
+
+        if (model_info.find("VNS") != string::npos)
+        	set_ro_build_prop("camera_product", "VENUS", true);
+        else if ((model_info.find("NEM") != string::npos) || (model_info.find("NMO") != string::npos))
+        	set_ro_build_prop("camera_product", "NEMO", true);
     } else {
         LOG(ERROR) << "Unable to parse product information!";
     }
