@@ -37,18 +37,12 @@ drm.service.enabled=true
 # Fastbootd
 ro.fastbootd.available=true
 
-# FRP
-ro.frp.pst=/dev/block/platform/hi_mci.0/by-name/frp
-
 # Gralloc
 ro.config.mmu_en=1
 persist.smart_pool=1
 
 # Kernel
 ro.config.enable_rcc=true
-
-# Launcher
-lockscreen.rot_override=true
 
 # Media
 persist.media.offload.enable=true
@@ -74,8 +68,6 @@ ro.config.hw_lte_support=true
 gsm.fastdormancy.mode=1
     
 # Sdcardfs
-ro.statsd.enable=false
-ro.sys.sdcardfs=1
 persist.sys.adoptable_fbe=true
 
 # Sensors
