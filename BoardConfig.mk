@@ -138,8 +138,8 @@ BOARD_PROVIDES_LIBRIL := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_hi6250
-TARGET_RECOVERY_DEVICE_MODULES := libinit_hi6250
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_hisi
+TARGET_RECOVERY_DEVICE_MODULES := init_hisi
 
 # Verity - Only needed for signing
 BOARD_AVB_ENABLE := false
