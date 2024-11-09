@@ -19,26 +19,28 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+using namespace std;
+
 struct ProductInfo {
-    std::string model;
-    std::string version;
-    std::string region_type;
+    string model;
+    string version;
+    string region_type;
 };
 
 constexpr const char* kOemInfoPath = "/dev/block/by-name/oeminfo";
-std::vector<unsigned char> pattern = {0x4F, 0x45, 0x4D, 0x5F, 0x49, 0x4E, 0x46, 0x4F, 0x06, 0x00,
+vector<unsigned char> pattern = {0x4F, 0x45, 0x4D, 0x5F, 0x49, 0x4E, 0x46, 0x4F, 0x06, 0x00,
                                       0x00, 0x00, 0x4E, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00,
                                       0x80, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00};
 
-ProductInfo ParseProductInfo(const std::string& product_info_str) {
+ProductInfo ParseProductInfo(const string& product_info_str) {
     ProductInfo product_info;
-    std::istringstream iss(product_info_str);
+    istringstream iss(product_info_str);
 
     // Extract the model (i.e. "PRA-LX1").
-    std::getline(iss, product_info.model, ' ');
+    getline(iss, product_info.model, ' ');
 
     // Extract the version (i.e. "9.1.0.311").
-    std::getline(iss, product_info.version, '(');
+    getline(iss, product_info.version, '(');
 
     // Remove trailing whitespace.
     if (!product_info.version.empty() && product_info.version.back() == ')') {
@@ -46,7 +48,7 @@ ProductInfo ParseProductInfo(const std::string& product_info_str) {
     }
 
     // Extract the baseband (i.e. "C185E3R2P1").
-    std::getline(iss, product_info.region_type, ')');
+    getline(iss, product_info.region_type, ')');
     return product_info;
 }
 
@@ -71,7 +73,7 @@ ProductInfo ReadProductInfo() {
 
     auto begin = static_cast<unsigned char*>(buffer);
     auto end = begin + size;
-    auto it = std::search(begin, end, pattern.begin(), pattern.end());
+    auto it = search(begin, end, pattern.begin(), pattern.end());
 
     if (it != end) {
         // Skip over 0xFF bytes
@@ -80,7 +82,7 @@ ProductInfo ReadProductInfo() {
             ++name_start;
         }
         // Parse the product info
-        product_info = ParseProductInfo(std::string(reinterpret_cast<char*>(name_start)));
+        product_info = ParseProductInfo(string(reinterpret_cast<char*>(name_start)));
     } else {
         LOG(ERROR) << "Unable to find product name in: " << kOemInfoPath;
     }
