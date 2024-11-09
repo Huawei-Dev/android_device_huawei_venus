@@ -33,6 +33,9 @@ dalvik.vm.heapminfree=2m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapmaxfree=8m
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 ro.opengles.version=196610
 
@@ -90,6 +93,13 @@ ro.config.hw_sensorhub=true
 debug.hwui.renderer=skiagl
 debug.renderengine.backend=threaded
 renderthread.skia.reduceopstasksplitting=true
+
+# SurfaceFlinger
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.running_without_sync_framework=true
+debug.sf.disable_client_composition_cache=1
+debug.sf.enable_gl_backpressure=1
+service.sf.prime_shader_cache=0
 
 # Touch
 persist.sys.fingersense=1
