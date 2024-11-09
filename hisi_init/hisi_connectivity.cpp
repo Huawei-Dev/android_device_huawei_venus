@@ -27,6 +27,7 @@ constexpr const char* kPropChipType = "ro.connectivity.chiptype";
 constexpr const char* kPropOdmSubChipType = "ro.boot.odm.conn.schiptype";
 constexpr const char* kPropOdmChipType = "ro.boot.odm.conn.chiptype";
 
+constexpr const char* kPropHisiChipType = "is_hisi_connectivity_chip";
 
 constexpr const char* kCmdline = "/proc/cmdline";
 constexpr const char* kDefaultId = "0X00000000";
@@ -120,6 +121,7 @@ static int LoadChipProperties() {
     // Set the property, so that the init scripts can be included conditionally.
     set_property(kPropChipType, chip_type);
     set_property(kPropOdmChipType, chip_type);
+    set_property(kPropHisiChipType, "1");
 
     // This is the subchip type, and it may be different depending on the hardware
     // revision. In our case, we can have either hi11xx or bcm43xx.
