@@ -41,9 +41,6 @@ PRODUCT_COPY_FILES += \
     
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/audio_patch:$(TARGET_COPY_OUT_VENDOR)/bin/audio_patch
-
-PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
     
 PRODUCT_COPY_FILES += \

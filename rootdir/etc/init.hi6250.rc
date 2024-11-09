@@ -280,7 +280,6 @@ on fs
 on late-fs
     mount_all /vendor/etc/fstab.hi6250 --late
     
-    start vendor.audio_patch
     start vendor.schedtune
     
 on post-fs
@@ -1145,12 +1144,6 @@ service vendor.hivwserver /vendor/bin/hivwserver
 on property:ro.config.hw_vowifi=true
     class_start vowifi
     start vendor.iked
-    
-service vendor.audio_patch /vendor/bin/audio_patch
-    class main
-    user root
-    group system
-    oneshot
     
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true
