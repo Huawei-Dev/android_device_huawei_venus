@@ -285,8 +285,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio@1.0.vendor \
-    librilutils \
-    mploader
+    librilutils
     
 # Shims
 PRODUCT_PACKAGES += \
