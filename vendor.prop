@@ -48,6 +48,9 @@ ro.netflix.bsp_rev=Q660-13149-1
 ro.hardware.nfc_nci=nqx.default
 vendor.qti.nfc.chipid=0x51
 
+# Recovery
+persist.vendor.recovery_update=true
+
 # RIL
 ro.config.ipv4.mtu=1400
 net.tethering.noprovisioning=true
