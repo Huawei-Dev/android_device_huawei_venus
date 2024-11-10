@@ -22,40 +22,26 @@
 
 #include "GloveMode.h"
 
-using android::hardware::configureRpcThreadpool;
-using android::hardware::joinRpcThreadpool;
-using android::sp;
-using android::status_t;
-using android::OK;
-
 using ::vendor::lineage::touch::V1_0::IGloveMode;
 using ::vendor::lineage::touch::V1_0::hi6250::GloveMode;
 
 int main() {
-    sp<IGloveMode> gloveMode;
-    status_t status;
+    android::sp<IGloveMode> gloveMode = new GloveMode();
 
     LOG(INFO) << "Touch HAL service is starting.";
 
-    gloveMode = new GloveMode();
-    if (gloveMode == nullptr) {
-        LOG(ERROR) << "Can not create an instance of Touch HAL GloveMode Iface, exiting.";
-        goto shutdown;
-    }
+    android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    configureRpcThreadpool(2, true /*callerWillJoin*/);
 
-    status = gloveMode->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for Touch HAL GloveMode Iface (" << status << ")";
-        goto shutdown;
+    if (gloveMode->registerAsService() != android::OK) {
+        LOG(ERROR) << "Cannot register touchscreen glove HAL service.";
+        return 1;
     }
 
     LOG(INFO) << "Touch HAL service is ready.";
-    joinRpcThreadpool();
-    // Should not pass this line
+    
+    android::hardware::joinRpcThreadpool();
 
-shutdown:
     // In normal operation, we don't expect the thread pool to shutdown
     LOG(ERROR) << "Touch HAL service is shutting down.";
     return 1;
