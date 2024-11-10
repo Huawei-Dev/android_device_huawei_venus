@@ -21,7 +21,8 @@ PRODUCT_SOONG_NAMESPACES += \
     device/huawei/venus \
     vendor/nxp/opensource/pn5xx \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    device/huawei/venus/interfaces
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
