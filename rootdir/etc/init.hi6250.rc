@@ -1105,17 +1105,6 @@ on property:ro.multi.rild=false
     symlink /dev/socket/rildm2 /dev/socket/rild2
     symlink /dev/socket/rildm3 /dev/socket/rild3
 
-# Not used in getprop !!!    
-service vendor.atcmdserver /vendor/bin/atcmdserver
-    class main
-    group root system nfc graphics audio camera
-    disabled
-       
-service vendor.diagserver /vendor/bin/diagserver
-    class main
-    user root
-    disabled
-    
 service vendor.teecd /vendor/bin/teecd
     class core
     user root
@@ -1127,21 +1116,6 @@ service vendor.oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     class core
     critical
     ioprio rt 4
-    
-service vendor.iked /vendor/bin/iked
-    class late_start
-    user root
-    disabled
-    group system
-    
-service vendor.hivwserver /vendor/bin/hivwserver
-    class vowifi
-    user system
-    group audio inet net_bt net_bt_admin net_bw_acct system
-	
-on property:ro.config.hw_vowifi=true
-    class_start vowifi
-    start vendor.iked
     
 on property:ro.boot.ddrsize=2
     setprop ro.config.low_ram true
