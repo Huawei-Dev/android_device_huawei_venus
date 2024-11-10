@@ -58,3 +58,16 @@ cc_library_shared {
         "liblog",
     ],
 }
+
+cc_library_shared {
+    name: "libimonitor",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "cjson.c",
+        "imonitor.c",
+    ],
+    shared_libs: [
+        "liblog",
+    ],
+}

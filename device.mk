@@ -218,6 +218,7 @@ PRODUCT_PACKAGES += \
     
 # Misc
 PRODUCT_PACKAGES += \
+    libimonitor \
     libxcollie \
     libhwlog \
     libchrlog \
