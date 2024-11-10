@@ -15,7 +15,10 @@ on post-fs-data
     
     mkdir /data/vendor/gnss 0770 system system
     mkdir /data/vendor/cust_conn 0770 system system
-    
+
+on boot
+    chown bluetooth bluetooth /dev/hwbt
+
 on property:sys.conn_macs.ready=1
     # Bluetooth
     chown bluetooth bluetooth /data/vendor/bluedroid/macbt
@@ -35,7 +38,6 @@ service vendor.oam_hisi /vendor/bin/oam_hisi
     class main
     user system
     group system root wifi bluetooth
-    oneshot
     disabled
     
 service vendor.hisi_bfg /vendor/bin/start_connectivity_hisi dir_p_mode
