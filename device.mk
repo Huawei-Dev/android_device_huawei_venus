@@ -22,7 +22,8 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/opensource/pn5xx \
     hardware/google/interfaces \
     hardware/google/pixel \
-    device/huawei/venus/power-libperfmgr
+    device/huawei/venus/power-libperfmgr \
+    device/huawei/venus/interfaces
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
