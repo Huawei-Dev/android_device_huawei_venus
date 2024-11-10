@@ -137,6 +137,9 @@ PRODUCT_PACKAGES += \
     
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.a2dp@1.0.vendor
+
+PRODUCT_PACKAGES += \
+    libbt-vendor
     
 # Configstore
 PRODUCT_PACKAGES += \
