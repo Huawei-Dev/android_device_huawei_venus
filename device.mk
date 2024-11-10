@@ -256,6 +256,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml
     
 # Power
+PRODUCT_PACKAGES += \
+    libiawareperf_client \
+    libperfgenius_vendor_client
+
+PRODUCT_PACKAGES += \
+    vendor.huawei.hardware.perfgenius@1.0.vendor \
+    vendor.huawei.hardware.iawareperf@1.0.vendor
+
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
     system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json

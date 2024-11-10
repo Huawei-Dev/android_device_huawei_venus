@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package vendor.huawei.hardware.perfgenius@2.0;
+package vendor.huawei.hardware.perfgenius@1.0;
 
 struct OperationInfo {
     uint32_t operationId;
