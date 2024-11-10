@@ -68,9 +68,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/prebuilts/privapp-permissions-supl.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-supl.xml
     
 PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.0.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss@2.0.vendor
+    android.hardware.gnss@1.1.vendor
     
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor
