@@ -293,13 +293,12 @@ on post-fs
     chmod 0660 /proc/uid_iostats/remove_uid_list
     
 on post-fs-data
-    mkdir /data/sec_storage_data 0700 system system
+    mkdir /data/sec_storage_data 0700 system system encryption=None
     restorecon /data/sec_storage_data
-    mkdir /data/sec_storage_data_users 0700 system system
+    mkdir /data/sec_storage_data_users 0700 system system encryption=None
     restorecon /data/sec_storage_data_users
     mkdir /data/vendor/log/sec_storage_data 0775 system system
     mkdir /data/vendor/log/sec_storage_data/log 0755 system system
-    start vendor.teecd
     
     mkdir /data/vendor/nfc 0777 nfc nfc
     mkdir /data/vendor/nfc/param 0777 nfc nfc
@@ -1109,8 +1108,6 @@ service vendor.teecd /vendor/bin/teecd
     class core
     user root
     group root system readproc
-    disabled
-    seclabel u:r:tee:s0
     
 service vendor.oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     class core
