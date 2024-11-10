@@ -1,6 +1,4 @@
 # Audio
-ro.config.hw_music_lp=true
-ro.config.music_lp_vol=true
 ro.audio.offload_wakelock=false
 ro.hardware.audio.primary=hisi_wrapper
 
@@ -39,7 +37,6 @@ debug.stagefright.ccodec=0
 
 # Misc
 persist.sys.huawei.debug.on=1
-ro.config.hw_vowifi=true
 
 # Netflix
 ro.netflix.bsp_rev=Q660-13149-1
