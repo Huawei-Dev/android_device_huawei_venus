@@ -22,7 +22,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/opensource/pn5xx \
     hardware/google/interfaces \
     hardware/google/pixel \
-    device/huawei/venus/power-libperfmgr \
     device/huawei/venus/interfaces
 
 # Overlay
@@ -244,9 +243,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml
     
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.hisi-libperfmgr
-
 PRODUCT_PACKAGES += \
     libiawareperf_client \
     libperfgenius_vendor_client
