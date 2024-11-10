@@ -337,7 +337,8 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
-    
-include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    
 $(call inherit-product, vendor/huawei/venus/venus-vendor.mk)
