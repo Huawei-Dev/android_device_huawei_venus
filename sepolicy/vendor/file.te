@@ -8,6 +8,9 @@ type dmd_device, dev_type;
 type misc_dev_block, dev_type;
 type mke2fs_blkdev, dev_type;
 type splash2_data_file, file_type;
-type teecd_data_file, file_type;
 
 type nfc_vendor_data_file, file_type, data_file_type;
+
+# TEE
+type teecd_data_file, file_type, data_file_type;
+type vendor_teecd_data_file, file_type, vendor_file_type;
