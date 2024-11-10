@@ -33,7 +33,7 @@
 /dev/hwvrdfu              			0660   root	system
 
 /dev/ttyAMA0					0660   root	system
-# ? chown media media /dev/ttyAMA0
+/dev/ttyAMA3					0660   system system
 
 # NFC
 /dev/pn544					0664   nfc	nfc
