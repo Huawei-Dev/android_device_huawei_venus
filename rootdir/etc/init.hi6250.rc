@@ -267,7 +267,7 @@ on early-fs
     start vendor.oeminfo_nvm
 
 on fs    
-    mount_all /vendor/etc/fstab.hi6250 --early
+    mount_all /vendor/etc/fstab.hi6250
     
     mkdir /splash2/log 0775 system log
     symlink /splash2/fac_log /data/log/fac_log
@@ -278,8 +278,6 @@ on fs
     restorecon       /sys/class/leds/torch/flash_thermal_protect
 
 on late-fs
-    mount_all /vendor/etc/fstab.hi6250 --late
-
     start vendor.schedtune
 
 on post-fs
