@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#define LOG_TAG "GloveModeService"
+
 #include "GloveMode.h"
 
 #include <fstream>
@@ -29,15 +31,17 @@ static constexpr const char *kTouchGlovePath = "/sys/touchscreen/touch_glove";
 // Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
 Return<bool> GloveMode::isEnabled() {
     std::ifstream file(kTouchGlovePath);
-    int result;
+    bool enabled;
 
-    file >> result;
-    return !file.fail() && result > 0;
+    file >> enabled;
+    return enabled;
 }
 
 Return<bool> GloveMode::setEnabled(bool enabled) {
     std::ofstream file(kTouchGlovePath);
-    file << (enabled ? "1" : "0");
+    
+    file << enabled << std::flush;
+    
     return !file.fail();
 }
 
