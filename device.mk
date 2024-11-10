@@ -184,7 +184,7 @@ PRODUCT_PACKAGES += \
     
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.hisi
+    android.hardware.light-service.huawei
     
 # Lineage hardware
 PRODUCT_PACKAGES += \
