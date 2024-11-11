@@ -241,6 +241,7 @@ PRODUCT_PACKAGES += \
     
 # Misc
 PRODUCT_PACKAGES += \
+    liblog_vendor \
     libimonitor \
     libxcollie \
     libhwlog \
@@ -311,9 +312,7 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common@1.0_types.vendor \
-    android.hardware.radio@1.0_types.vendor \
-    libtinyxml2_shim.vendor \
-    liblog_vendor
+    android.hardware.radio@1.0_types.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
