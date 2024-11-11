@@ -44,6 +44,12 @@ service vendor.hisi_bfg /vendor/bin/start_connectivity_hisi dir_p_mode
     user root
     group system wifi
     oneshot
+
+service vendor.fm_server_hisi /vendor/bin/fm_server_hisi
+    class main
+    user system
+    group system
+    disabled
     
 on property:vendor.setup_hi110x_modules=success
     start vendor.octty
@@ -52,6 +58,7 @@ on property:vendor.setup_hi110x_modules=success
     start vendor.agnsscontrol
     start vendor.supl20clientd
     start vendor.watchlssd
+    start vendor.fm_server_hisi
     write /dev/kmsg "vendor.setup_hi110x_modules has started"
 
 service vendor.hsgnss /vendor/bin/gnss_engine_hisi -normal
