@@ -21,7 +21,8 @@ PRODUCT_SOONG_NAMESPACES += \
     device/huawei/venus \
     hardware/google/interfaces \
     hardware/google/pixel \
-    device/huawei/venus/interfaces
+    device/huawei/venus/interfaces \
+    vendor/hisi/opensource/fm-commonsys
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -157,6 +158,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/native_packages.bin:$(TARGET_COPY_OUT_VENDOR)/etc/native_packages.bin
     
+# FM Radio
+PRODUCT_PACKAGES += \
+    HwFMApp2 \
+    hisi.fmradio
+
 # Gralloc
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
