@@ -146,6 +146,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor:64 \
     libpcap.vendor:64    
+
+PRODUCT_PACKAGES += \
+    android.hardware.camera.common@1.0-helper
     
 # Configstore
 PRODUCT_PACKAGES += \
