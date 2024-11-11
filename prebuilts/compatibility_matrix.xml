@@ -15,6 +15,15 @@
             <instance>gpucommon</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>android.frameworks.cameraservice.service</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>ICameraService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="false">
         <name>android.frameworks.schedulerservice</name>
         <version>1.0</version>

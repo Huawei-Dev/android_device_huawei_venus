@@ -137,6 +137,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libbt-vendor
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl:64 \
+    android.hardware.camera.provider@2.4-service_64
+
+PRODUCT_PACKAGES += \
+    libstdc++.vendor:64 \
+    libpcap.vendor:64    
     
 # Configstore
 PRODUCT_PACKAGES += \
@@ -267,10 +276,6 @@ PRODUCT_COPY_FILES += \
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/schedtune:$(TARGET_COPY_OUT_VENDOR)/bin/schedtune
-
-# Pcap
-PRODUCT_PACKAGES += \
-    libpcap.vendor
 
 # Ramdisk
 PRODUCT_PACKAGES += \
