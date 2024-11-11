@@ -145,7 +145,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libstdc++.vendor:64 \
-    libpcap.vendor:64    
+    libpcap.vendor:64  \
+    libdng_sdk.vendor:64 \
+    libpiex_shim:64   
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0-helper
