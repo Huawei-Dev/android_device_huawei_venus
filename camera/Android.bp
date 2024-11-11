@@ -41,4 +41,5 @@ cc_library_shared {
     include_dirs: [
         "system/media/private/camera/include",
     ],
+    compile_multilib: "64",
 }
