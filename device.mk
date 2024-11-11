@@ -22,7 +22,8 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/opensource/pn5xx \
     hardware/google/interfaces \
     hardware/google/pixel \
-    device/huawei/venus/interfaces
+    device/huawei/venus/interfaces \
+    vendor/hisi/opensource/fm-commonsys
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -165,6 +166,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/fingerprint.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fingerprint.kl
     
+# FM Radio
+PRODUCT_PACKAGES += \
+    HwFMApp2 \
+    hisi.fmradio
+
 # Gralloc
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
