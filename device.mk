@@ -147,11 +147,12 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor:64 \
     libpcap.vendor:64  \
     libdng_sdk.vendor:64 \
-    libpiex_shim:64   
+    libpiex_shim:64
 
 PRODUCT_PACKAGES += \
-    android.hardware.camera.common@1.0-helper
-    
+    android.hardware.camera.common@1.0-helper \
+    libshim_memtrack
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore

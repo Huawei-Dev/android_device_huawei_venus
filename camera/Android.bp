@@ -1,0 +1,20 @@
+//
+// Copyright (C) 2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libshim_memtrack",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libshim_memtrack.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libhardware",
+        "libmemtrack",        
+    ],
+    compile_multilib: "64",
+}
