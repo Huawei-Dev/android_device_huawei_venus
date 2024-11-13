@@ -17,9 +17,8 @@
 #include <ui/GraphicBufferMapper.h>
 #include <ui/Rect.h>
 
-namespace android {
-
-// ---------------------------------------------------------------------------
+using android::Rect;
+using android::status_t;
 
 extern "C" {
 
@@ -29,13 +28,9 @@ extern "C" {
             int32_t* outBytesPerPixel, int32_t* outBytesPerStride);
 
     status_t _ZN7android19GraphicBufferMapper4lockEPK13native_handleiRKNS_4RectEPPv(
-            buffer_handle_t handle, int usage, const android::Rect& bounds, void** vaddr)
+            buffer_handle_t handle, int usage, const Rect& bounds, void** vaddr)
     {
         return _ZN7android19GraphicBufferMapper4lockEPK13native_handlejRKNS_4RectEPPvPiS9_(
                 handle, (uint32_t)usage, bounds, vaddr, nullptr, nullptr);
     }
 }
-
-// ---------------------------------------------------------------------------
-
-}; // namespace android
