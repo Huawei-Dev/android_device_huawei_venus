@@ -158,6 +158,10 @@ PRODUCT_PACKAGES += \
     libc_sec_hisi \
     libgud
 
+# Camera - HwCamCfgSvr
+PRODUCT_PACKAGES += \
+    libc_sec_hccs
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore

@@ -73,3 +73,15 @@ cc_library_shared {
     ],
     compile_multilib: "64",
 }
+
+// HwCamCfgSvr
+cc_library_shared {
+    name: "libc_sec_hccs",
+    proprietary: true,
+    shared_libs: [
+        "libc_sec_hisi",
+        "libshim_memtrack",
+        "libbinder_shim",
+    ],
+    compile_multilib: "64",
+}
