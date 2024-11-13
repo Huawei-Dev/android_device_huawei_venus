@@ -17,7 +17,10 @@
 #include <string>
 #include <ui/GraphicBuffer.h>
 
-extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
+extern "C" {
+
+void* _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
+        void* thisptr,
         const native_handle_t* handle,
         android::GraphicBuffer::HandleWrapMethod method,
         uint32_t width,
@@ -27,7 +30,8 @@ extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
         uint64_t usage,
         uint32_t stride);
 
-extern "C" void _ZN7android13GraphicBufferC1EjjijjP13native_handleb(
+void* _ZN7android13GraphicBufferC1EjjijjP13native_handleb(
+        void* thisptr,
         uint32_t inWidth,
         uint32_t inHeight,
         int inFormat,
@@ -38,6 +42,8 @@ extern "C" void _ZN7android13GraphicBufferC1EjjijjP13native_handleb(
 {
     android::GraphicBuffer::HandleWrapMethod inMethod =
         (keepOwnership ? android::GraphicBuffer::TAKE_HANDLE : android::GraphicBuffer::WRAP_HANDLE);
-    _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(inHandle, inMethod, inWidth, inHeight,
+    return _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(thisptr, inHandle, inMethod, inWidth, inHeight,
         inFormat, static_cast<uint32_t>(1), static_cast<uint64_t>(inUsage), inStride);
 }
+
+} // extern "C"
