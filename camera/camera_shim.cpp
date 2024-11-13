@@ -60,14 +60,15 @@ status_t _ZN7android19GraphicBufferMapper12importBufferEPK13native_handlejjjiyjP
         uint32_t layerCount, PixelFormat format, uint64_t usage, uint32_t stride,
         buffer_handle_t* outHandle);
 #endif
-status_t _ZN7android19GraphicBufferMapper12importBufferEPK13native_handlePS3_(
-        void* thisptr, buffer_handle_t rawHandle, buffer_handle_t* outHandle) {
+
+status_t _ZN7android19GraphicBufferMapper14registerBufferEPK13native_handle(
+        void* thisptr, buffer_handle_t rawHandle) {
 #if defined(__LP64__)
     return _ZN7android19GraphicBufferMapper12importBufferEPK13native_handlejjjimjPS3_(
-            thisptr, rawHandle, -1, -1, -1, android::PIXEL_FORMAT_NONE, -1, -1, outHandle);
+            thisptr, rawHandle, -1, -1, -1, android::PIXEL_FORMAT_NONE, -1, -1, nullptr);
 #else
     return _ZN7android19GraphicBufferMapper12importBufferEPK13native_handlejjjiyjPS3_(
-            thisptr, rawHandle, -1, -1, -1, android::PIXEL_FORMAT_NONE, -1, -1, outHandle);
+            thisptr, rawHandle, -1, -1, -1, android::PIXEL_FORMAT_NONE, -1, -1, nullptr);
 #endif
 }
 
