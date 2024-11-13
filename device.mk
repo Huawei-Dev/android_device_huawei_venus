@@ -162,6 +162,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libc_sec_hccs
 
+# Camera - libcamera_algo
+PRODUCT_PACKAGES += \
+    libgua
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore

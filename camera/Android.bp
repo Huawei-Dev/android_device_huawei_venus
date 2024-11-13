@@ -85,3 +85,15 @@ cc_library_shared {
     ],
     compile_multilib: "64",
 }
+
+// libcamera_algo
+cc_library_shared {
+    name: "libgua",
+    proprietary: true,
+    shared_libs: [
+        "libshim_algo_hwcam",
+        "libsensor_vendor",
+        "libshim_memtrack",
+    ],
+    compile_multilib: "64",
+}
