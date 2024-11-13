@@ -97,3 +97,16 @@ cc_library_shared {
     ],
     compile_multilib: "64",
 }
+
+// hwcam
+cc_library_shared {
+    name: "libhwc",
+    proprietary: true,
+    shared_libs: [
+        "libshim_algo_hwcam",
+        "libshim_hwcam",
+        "libsensor_vendor",
+        "libui",
+    ],
+    compile_multilib: "64",
+}
