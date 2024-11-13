@@ -43,3 +43,12 @@ cc_library_shared {
     ],
     compile_multilib: "64",
 }
+
+cc_library_shared {
+    name: "libgud",
+    proprietary: true,
+    shared_libs: [
+        "libgui_vendor",
+    ],
+    compile_multilib: "64",
+}

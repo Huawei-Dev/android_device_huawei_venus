@@ -154,7 +154,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0-helper \
     libcamera_metadata_helper \
-    libshim_memtrack
+    libshim_memtrack \
+    libgud
 
 # Configstore
 PRODUCT_PACKAGES += \
