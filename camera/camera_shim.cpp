@@ -72,4 +72,13 @@ status_t _ZN7android19GraphicBufferMapper14registerBufferEPK13native_handle(
 #endif
 }
 
+status_t _ZN7android19GraphicBufferMapper10freeBufferEPK13native_handle(
+        void *thisptr, buffer_handle_t handle);
+
+status_t _ZN7android19GraphicBufferMapper16unregisterBufferEPK13native_handle(
+        void *thisptr, buffer_handle_t handle)
+{
+    return _ZN7android19GraphicBufferMapper10freeBufferEPK13native_handle(thisptr, handle);
+}
+
 } // extern "C"
