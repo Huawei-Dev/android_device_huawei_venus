@@ -15,6 +15,7 @@
  */
 
 #include <string>
+#include <libexif/exif-entry.h>
 #include <ui/GraphicBuffer.h>
 
 using android::PixelFormat;
@@ -79,6 +80,10 @@ status_t _ZN7android19GraphicBufferMapper16unregisterBufferEPK13native_handle(
         void *thisptr, buffer_handle_t handle)
 {
     return _ZN7android19GraphicBufferMapper10freeBufferEPK13native_handle(thisptr, handle);
+}
+
+void exif_entry_gps_initialize(ExifEntry* e, ExifTag tag) {
+    exif_entry_initialize(e, tag);
 }
 
 } // extern "C"

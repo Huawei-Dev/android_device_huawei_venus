@@ -59,6 +59,7 @@ cc_library_shared {
     srcs: ["camera_shim.cpp"],
     shared_libs: [
         "libui",
+        "libexif",
     ],
     compile_multilib: "64",
 }
