@@ -6,3 +6,20 @@
 
 soong_namespace {
 }
+
+cc_prebuilt_library_shared {
+	name: "libc_sec_hisi",
+	owner: "huawei",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["prebuilts/libc_sec_hisi.so"],
+		},
+	},
+	compile_multilib: "64",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}

@@ -155,6 +155,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0-helper \
     libcamera_metadata_helper \
     libshim_memtrack \
+    libc_sec_hisi \
     libgud
 
 # Configstore
