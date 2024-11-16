@@ -1,10 +1,6 @@
 on init
     setprop sys.usb.configfs 1
 
-on fs
-    wait /dev/block/platform/hi_mci.0
-    symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
-
 on property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/UDC "none"
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "adb"
