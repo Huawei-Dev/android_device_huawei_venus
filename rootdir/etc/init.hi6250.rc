@@ -551,6 +551,8 @@ on boot
     chmod 0660 /sys/devices/platform/fingerprint/result
     chown system system /sys/devices/platform/fingerprint/fingerprint_chip_info
     
+    write /sys/devices/platform/fingerprint/nav 1
+    
     chown system system /sys/class/leds/torch/brightness
     chmod 664 /sys/class/leds/torch/brightness
     restorecon /sys/class/leds/torch/brightness
