@@ -115,6 +115,8 @@ PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Audio
+$(call soong_config_set,android_hardware_audio,run_64bit,true)
+
 PRODUCT_PACKAGES += \
     audio.primary.hisi_wrapper \
     audio.bluetooth.default \
@@ -122,7 +124,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service.hisi \
+    android.hardware.audio.service \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.bluetooth.audio@2.1-impl

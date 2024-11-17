@@ -15,25 +15,3 @@ cc_library_shared {
     ],
     cflags: ["-Wall", "-Werror", "-Wno-unused-parameter"],
 }
-
-cc_binary {
-    name: "android.hardware.audio.service.hisi",
-    init_rc: ["android.hardware.audio.service.hisi.rc"],
-    relative_install_path: "hw",
-    vendor: true,
-    compile_multilib: "64",
-    srcs: ["service.cpp"],
-    cflags: [
-        "-Wall",
-        "-Wextra",
-        "-Werror",
-    ],
-    shared_libs: [
-        "libcutils",
-        "libbinder",
-        "libhidlbase",
-        "liblog",
-        "libutils",
-        "libhardware",
-    ],
-}
