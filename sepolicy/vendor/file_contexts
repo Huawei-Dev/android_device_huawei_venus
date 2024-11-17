@@ -42,7 +42,6 @@
 /dev/tc_ns_client                               				u:object_r:teecd_device:s0
 
 # Rootfs
-/produce(/.*)?									u:object_r:system_file:s0
 /splash2(/.*)?         								u:object_r:splash2_data_file:s0
 /3rdmodem(/.*)?									u:object_r:modem_file:s0
 /3rdmodemnvm(/.*)?								u:object_r:modem_file:s0
