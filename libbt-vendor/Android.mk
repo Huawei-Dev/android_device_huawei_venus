@@ -9,7 +9,7 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(BOARD_USES_LIBBT_WRAPPER),)
 include $(CLEAR_VARS)
 
-BDROID_DIR := $(TOP_DIR)packages/modules/Bluetooth/system
+BDROID_DIR := $(TOP_DIR)system/bt
 
 LOCAL_C_INCLUDES += \
     $(LOCAL_PATH)/include \

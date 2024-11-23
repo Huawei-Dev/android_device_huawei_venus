@@ -15,6 +15,6 @@ cc_library_shared {
         "libbase",
         "liblog",
         "libbinder_ndk",
-        "android.hardware.power-V2-ndk",
+        "android.hardware.power-V2-ndk_platform",
     ],
 }
