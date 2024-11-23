@@ -4,6 +4,7 @@ ro.hardware.audio.primary=hisi_wrapper
 
 # BT
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
+persist.bluetooth.disable_a2dp_offload=true
 ro.rfkilldisabled=1
 
 # Charger
