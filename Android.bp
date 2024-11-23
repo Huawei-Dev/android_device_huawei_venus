@@ -1,11 +1,8 @@
-subdirs = [
-    "init",
-    "libshims",
-    "libxcollie",
-    "lights",
-    "livedisplay",
-    "mac_nvme",
-    "mploader",
-    "power-libperfmgr",
-    "touch",
-]
+//
+// Copyright (C) 2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+}
