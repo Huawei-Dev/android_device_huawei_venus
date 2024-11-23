@@ -92,9 +92,6 @@ persist.sys.fingersense=1
 wifi.interface=wlan0
 wifi.direct.interface=p2p-dev-wlan0
 
-# WiFi Display
-persist.debug.wfd.enable=1
-
 # ZRAM
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
