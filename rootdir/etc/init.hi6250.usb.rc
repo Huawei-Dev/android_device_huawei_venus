@@ -42,6 +42,7 @@ on init
     setprop sys.usb.ffs.aio_compat 1
     setprop ro.adb.nonblocking_ffs 0
     setprop persist.adb.nonblocking_ffs 0
+    setprop persist.sys.usb.config manufacture,adb
     
 on boot
     chown system system /sys/devices/platform/ff100000.hisi_usb/plugusb
