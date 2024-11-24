@@ -146,7 +146,6 @@
             <name>ISecureElement</name>
             <instance>SIM1</instance>
         </interface>
-        <fqname>@1.0::ISecureElement/SIM1</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.sensors</name>

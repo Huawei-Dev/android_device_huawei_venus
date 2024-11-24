@@ -198,6 +198,9 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
 
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Pcap
 PRODUCT_PACKAGES += \
     libpcap.vendor
