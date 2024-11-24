@@ -304,6 +304,9 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/rootdir/etc/init.recovery.hi6250.rc:$(TARGET_RECOVERY_OUT)/root/init.recovery.hi6250.rc
     
 # RIL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/ons.bin:$(TARGET_COPY_OUT_SYSTEM)/ons.bin
+
 PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio@1.0.vendor \
