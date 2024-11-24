@@ -135,7 +135,7 @@ BOARD_ROOT_EXTRA_FOLDERS :=  \
 	modem_fw \
 	splash2
     
-BOARD_ROOT_EXTRA_SYMLINKS += /vendor/odm/hw_odm:/hw_odm
+BOARD_ROOT_EXTRA_SYMLINKS += /odm/hw_odm:/hw_odm
 	
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
