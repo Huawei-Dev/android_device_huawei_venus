@@ -13,9 +13,8 @@ on init
     
     write /sys/module/hisi_nve/parameters/nve /dev/block/bootdevice/by-name/nvme
     
-    # NXP HAL expects /dev/nq-nci
-    symlink /dev/pn544 /dev/nq-nci
-    symlink /dev/pn544 /dev/nfc-nci
+    # NXP HAL expects /dev/pn54x
+    symlink /dev/pn544 /dev/pn54x
     
     wait /dev/nve0
     chmod 0770 /dev/nve0
@@ -299,7 +298,6 @@ on post-fs-data
     mkdir /data/vendor/log/sec_storage_data/log 0755 system system
     
     mkdir /data/vendor/nfc 0777 nfc nfc
-    mkdir /data/vendor/nfc/param 0777 nfc nfc
     
     mkdir /splash2/sim 0770 root system
     mkdir /splash2/sim/offlinelogs 0770 root system
