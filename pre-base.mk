@@ -14,4 +14,4 @@
 
 # APN
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/product/etc/apns-conf.xml
+    $(LOCAL_PATH)/prebuilts/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
