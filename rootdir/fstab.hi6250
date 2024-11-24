@@ -21,6 +21,8 @@ odm	  		/odm		ext4    ro,barrier=1							wait,logical,first_stage_mount
 /dev/block/by-name/recovery		/recovery	emmc    defaults                        recoveryonly
 /dev/block/by-name/misc    		/misc		emmc    defaults        		defaults
 
+/dev/block/by-name/version		/metadata  	ext4    noatime,nosuid,nodev				wait,check,formattable,first_stage_mount
+
 /devices/platform/hi_mci.1/mmc_host/mmc1/*            	auto		auto    defaults			voldmanaged=sdcard:auto,encryptable=userdata
 /devices/hisi-usb-otg/usb1/*				auto		auto    defaults			voldmanaged=usbotg:auto
 
