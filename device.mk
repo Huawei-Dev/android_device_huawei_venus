@@ -288,15 +288,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Shims
+# Secure Element
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.0_types.vendor \
-    liblog_vendor
+    android.hardware.secure_element@1.0.vendor \
+    android.hardware.nfc@1.2.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
+
+# Shims
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.0_types.vendor \
+    liblog_vendor
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
