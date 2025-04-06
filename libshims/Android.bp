@@ -39,7 +39,7 @@ cc_library_shared {
 }
 
 cc_library_shared {
-    name: "libhwlog",
+    name: "libhwlogs",
     proprietary: true,
     defaults: ["hidl_defaults"],
     srcs: [
@@ -95,4 +95,15 @@ cc_library_shared {
         "libcutils",
     ],
     vendor: true,
+}
+
+cc_library_shared {
+    name: "libhwlog",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    shared_libs: [
+        "liblog",
+        "libchrlog",
+        "libhwlogs",
+    ],
 }
