@@ -328,7 +328,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
-    
+
 # Vndk
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -337,20 +337,22 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor
-    
+
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite-v29 \
     libui-v28
- 
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
-   android.hardware.wifi@1.0-service \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf
-    
+   android.hardware.wifi@1.3.vendor \
+   android.hardware.wifi.hostapd@1.1.vendor \
+   android.hardware.wifi.supplicant@1.2.vendor
+
+PRODUCT_PACKAGES += \
+    libkeystore-engine-wifi-hidl \
+    libkeystore-wifi-hidl
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    hardware/broadcom/wlan/bcmdhd/config/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 $(call inherit-product, vendor/huawei/venus/venus-vendor.mk)

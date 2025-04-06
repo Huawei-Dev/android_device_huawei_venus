@@ -20,7 +20,9 @@
 /vendor/bin/gnss_control_hisi							u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/gnss_engine_hisi							u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/gnss_supl20clientd_hisi						u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/gnss_watchlssd_thirdparty						u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/hisi_init                           				u:object_r:vendor_hisi_init_exec:s0
+/vendor/bin/hostapd_hisi							u:object_r:hal_wifi_hostapd_default_exec:s0
 /vendor/bin/HwCamCfgSvr								u:object_r:hal_camera_default_exec:s0
 /vendor/bin/oam_hisi								u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/octty								u:object_r:hal_gnss_default_exec:s0
@@ -28,8 +30,7 @@
 /vendor/bin/start_connectivity_hisi						u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/schedtune								u:object_r:hal_sched_default_exec:s0
 /vendor/bin/teecd								u:object_r:tee_exec:s0
-
-/vendor/bin/gnss_watchlssd_thirdparty						u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/wpa_supplicant_hisi							u:object_r:hal_wifi_supplicant_default_exec:s0
 
 /data/fpc(/.*)?                                          			u:object_r:fingerprintd_data_file:s0
 /dev/fingerprint                                         			u:object_r:fps_device:s0
