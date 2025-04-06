@@ -45,6 +45,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service.hisi \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl
+
+PRODUCT_PACKAGES += \
+    libshim_audioparams
     
 # BT
 PRODUCT_PACKAGES += \
