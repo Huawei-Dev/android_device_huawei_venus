@@ -131,7 +131,7 @@
     <hal format="hidl">
         <name>android.hardware.nfc</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.2</version>
         <interface>
             <name>INfc</name>
             <instance>default</instance>
@@ -144,6 +144,7 @@
         <interface>
             <name>ISecureElement</name>
             <instance>SIM1</instance>
+            <instance>eSE1</instance>
         </interface>
     </hal>
     <hal format="hidl">
