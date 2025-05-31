@@ -19,11 +19,11 @@ LOCAL_PATH := device/huawei/venus
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-    
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     $(LOCAL_PATH)/prebuilts/audio_policy_volumes_drc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes_drc.xml \
@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-    
+
 PRODUCT_PACKAGES += \
     audio.primary.hisi_wrapper \
     audio.r_submix.default \
@@ -48,7 +48,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libshim_audioparams
-    
+ 
 # BT
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
@@ -65,25 +65,28 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libdng_sdk.vendor
-    
+
+PRODUCT_PACKAGES += \
+    liblogshim
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
-    
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey
-    
+
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.1.vendor \
     android.hardware.drm@1.2.vendor
-    
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-    
+
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
@@ -93,7 +96,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/fingerprint.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fingerprint.kl
-    
+
 # FM Radio
 PRODUCT_PACKAGES += \
     HwFMApp2 \
@@ -108,10 +111,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/prebuilts/gnss_suplconfig_hisi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/gnss/config/gnss_suplconfig_hisi.xml \
      $(LOCAL_PATH)/prebuilts/privapp-permissions-supl.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-supl.xml
-    
+
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1.vendor
-    
+
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor    
 
@@ -132,15 +135,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
-    
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.huawei
-    
+
 # Lineage hardware
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.hi6250
-    
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.1-service-hisi
@@ -148,12 +151,12 @@ PRODUCT_PACKAGES += \
 # MAC Loader
 PRODUCT_PACKAGES += \
     hisi_init
-    
+
 # Media
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service \
     libmockcasplugin
-    
+
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
@@ -164,7 +167,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/prebuilts/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
-   
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/topazhp.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/topazhp.cfg \
     $(LOCAL_PATH)/prebuilts/vdec_atlas.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/vdec_atlas.cfg
@@ -173,7 +175,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
-    
+
 # Misc
 PRODUCT_PACKAGES += \
     libimonitor \
@@ -192,7 +194,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
-    
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
@@ -205,12 +207,12 @@ PRODUCT_COPY_FILES += \
 # NFC Secure Element
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor
-    
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
-    
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -276,10 +278,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
     system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/schedtune:$(TARGET_COPY_OUT_VENDOR)/bin/schedtune
 
@@ -297,7 +299,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/rootdir/etc/init.recovery.hi6250.rc:$(TARGET_RECOVERY_OUT)/root/init.recovery.hi6250.rc
-    
+
 # RIL
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/ons.bin:$(TARGET_COPY_OUT_SYSTEM)/ons.bin
@@ -306,7 +308,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio@1.0.vendor \
     librilutils
-    
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -340,7 +342,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic \
     com.android.future.usb.accessory
-    
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
