@@ -56,6 +56,11 @@ PRODUCT_PACKAGES += \
     
 PRODUCT_PACKAGES += \
     libbt-vendor
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-service_64 \
+    android.hardware.camera.provider@2.4-impl:64
     
 # Configstore
 PRODUCT_PACKAGES += \
