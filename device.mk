@@ -66,7 +66,8 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libdng_sdk.vendor \
     libgui_vendor \
-    libcamera_algo_shim.vendor
+    libcamera_algo_shim.vendor \
+    libsensor_vendor
 
 PRODUCT_PACKAGES += \
     libHWCamCfgSvr_shim \

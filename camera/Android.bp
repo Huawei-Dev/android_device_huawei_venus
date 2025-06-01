@@ -64,10 +64,14 @@ cc_library_shared {
     name: "libcamera_algo_shim",
     srcs: [
     	"GraphicBufferMapper.cpp",
+    	"memtrack_shim.cpp",
     ],
     shared_libs: [
         "libui",
         "libutils",
+        "libhardware",
+        "liblog",
+        "libmemtrack",
     ],
     vendor_available: true,
 }
