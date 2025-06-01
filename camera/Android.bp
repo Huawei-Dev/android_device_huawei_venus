@@ -59,3 +59,29 @@ cc_library_shared {
     ],
     include_dirs: ["system/media/private/camera/include"],
 }
+
+cc_library_shared {
+    name: "libcamera_algo_shim",
+    srcs: [
+    	"GraphicBufferMapper.cpp",
+    ],
+    shared_libs: [
+        "libui",
+        "libutils",
+    ],
+    vendor_available: true,
+}
+
+cc_library_shared {
+    name: "libsensor_vendor",
+    srcs: [
+        "Sensor.cpp",
+        "SensorEventQueue.cpp",
+        "SensorManager.cpp",
+    ],
+    shared_libs: [
+        "libsensorndkbridge",
+        "libutils",
+    ],
+    vendor: true,
+}
