@@ -67,6 +67,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     libgui_vendor \
     libcamera_algo_shim.vendor \
+    libhwcam_shim.vendor \
     libsensor_vendor
 
 PRODUCT_PACKAGES += \

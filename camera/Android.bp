@@ -77,6 +77,20 @@ cc_library_shared {
 }
 
 cc_library_shared {
+    name: "libhwcam_shim",
+    srcs: [
+    	"GraphicBufferMapper.cpp",
+    	"GraphicBufferMapper_hwcam.cpp",
+    ],
+    shared_libs: [
+        "libui",
+        "libutils",
+        "libexif",
+    ],
+    vendor_available: true,
+}
+
+cc_library_shared {
     name: "libsensor_vendor",
     srcs: [
         "Sensor.cpp",
