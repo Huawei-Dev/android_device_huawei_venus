@@ -64,7 +64,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libstdc++.vendor \
-    libdng_sdk.vendor
+    libdng_sdk.vendor \
+    libgui_vendor
 
 PRODUCT_PACKAGES += \
     libHWCamCfgSvr_shim \
