@@ -43,7 +43,7 @@ cc_library_shared {
     proprietary: true,
     defaults: ["hidl_defaults"],
     srcs: [
-        "CameraMetadata.cpp",
+        "CameraMetadata.cpp", "Fence.cpp",
     ],
     cflags: [
         "-Werror",
@@ -52,6 +52,7 @@ cc_library_shared {
     ],
     shared_libs: [
         "liblog",
+        "libui",
         "libutils",
         "libhardware",
         "libcamera_metadata",
