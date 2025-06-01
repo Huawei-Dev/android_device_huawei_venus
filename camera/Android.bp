@@ -26,3 +26,14 @@ cc_library {
     ],
     vendor: true
 }
+
+cc_library_shared {
+    name: "libshim_memtrack",
+    srcs: [
+    	"memtrack_shim.cpp", "PermissionCache.cpp",
+    ],
+    shared_libs: [
+    	"libhardware", "liblog", "libmemtrack", "libbinder", "libutils",
+    ],
+    vendor: true,
+}

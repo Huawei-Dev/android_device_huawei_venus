@@ -68,6 +68,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libHWCamCfgSvr_shim \
+    libshim_memtrack \
     liblogshim
 
 # Configstore
