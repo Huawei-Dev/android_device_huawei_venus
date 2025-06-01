@@ -79,6 +79,7 @@ cc_library_shared {
 cc_library_shared {
     name: "libhwcam_shim",
     srcs: [
+    	"GraphicBuffer.cpp",
     	"GraphicBufferMapper.cpp",
     	"GraphicBufferMapper_hwcam.cpp",
     ],
