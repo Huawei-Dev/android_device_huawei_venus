@@ -15,3 +15,14 @@ cc_library_shared {
         "liblog",
     ],
 }
+
+cc_library {
+    name: "libHWCamCfgSvr_shim",
+    shared_libs: [
+    	"libbinder", "libutils",
+    ],
+    srcs: [
+        "IServiceManager.cpp",
+    ],
+    vendor: true
+}

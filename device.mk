@@ -67,6 +67,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor
 
 PRODUCT_PACKAGES += \
+    libHWCamCfgSvr_shim \
     liblogshim
 
 # Configstore
